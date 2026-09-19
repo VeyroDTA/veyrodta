@@ -21,7 +21,7 @@ const packages = [
     name: 'Profesyonel Web Çözümü',
     desc: 'Büyük ve özel ihtiyaçlar.',
     price: '34.900 TL',
-    features: ['10+ sayfa & Özel tasarım', 'Randevu & Üyelik sistemi', 'Gelişmiş SEO & Performans'],
+    features: ['10+ sayfa & Özel tasarım', 'Randevu & Üyelik sistemi', 'Gelişmiş SEO & Performans', 'Domain + Hosting (1. yıl dahil)'],
     highlight: true,
     cta: 'Hemen Başla →',
   },
@@ -29,7 +29,7 @@ const packages = [
     name: 'E-Ticaret Pro',
     desc: 'Online satış yapmak isteyenler.',
     price: '49.900 TL',
-    features: ['Ürün & Kategori yönetimi', 'Sanal Pos ödeme', 'Kargo entegrasyonu & SSL'],
+    features: ['Ürün & Kategori yönetimi', 'Sanal Pos ödeme', 'Kargo entegrasyonu & SSL', 'Domain + Hosting (1. yıl dahil)'],
     highlight: false,
     cta: 'Teklif Al →',
   },
@@ -94,12 +94,15 @@ export default function Pricing() {
             }
           >
             {pkg.highlight && (
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase">
-                ⭐ EN ÇOK TERCİH EDİLEN
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-[0_4px_16px_rgba(245,158,11,0.45)] border border-amber-200/60">
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M10 1.5l2.472 5.01 5.528.803-4 3.899.944 5.507L10 14.14l-4.944 2.6.944-5.508-4-3.898 5.528-.803L10 1.5z" />
+                </svg>
+                En Çok Tercih Edilen
               </div>
             )}
             <div>
-              <h3 className={`text-lg font-bold text-white mb-1 ${pkg.highlight ? 'mt-1' : ''}`}>{pkg.name}</h3>
+              <h3 className={`text-lg font-bold text-white mb-1 ${pkg.highlight ? 'mt-2' : ''}`}>{pkg.name}</h3>
               <p className="text-xs text-slate-400 mb-4">{pkg.desc}</p>
               <div className={`text-2xl font-black mb-6 ${pkg.highlight ? 'text-amber-300' : 'text-cyan-400'}`}>{pkg.price}</div>
               <ul className="space-y-2 text-sm text-slate-300 mb-6">
@@ -123,11 +126,9 @@ export default function Pricing() {
       </div>
 
       <p className="text-center text-xs text-slate-500 mb-20 -mt-14">
-        * Domain + Hosting bedeli 1. yıl pakete dahildir. 2. yıldan itibaren yıllık yenileme bedeli
-        {' '}
-        <span className="text-amber-300 font-semibold">[TODO: yıllık yenileme fiyatını buraya yaz]</span>
-        {' '}
-        olarak faturalandırılır, dilerseniz kendi domain/hosting sağlayıcınızı da kullanabilirsiniz.
+        * Domain + Hosting bedeli 1. yıl pakete dahildir. 2. yıldan itibaren yenileme bedeli,
+        o yılın güncel domain/hosting fiyatına göre ayrıca faturalandırılır ve teklif
+        aşamasında netleştirilir; dilerseniz kendi domain/hosting sağlayıcınızı da kullanabilirsiniz.
       </p>
 
       <div className="pt-16 border-t border-cyan-500/20">
