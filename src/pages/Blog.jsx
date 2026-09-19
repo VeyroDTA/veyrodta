@@ -22,7 +22,7 @@ export default function Blog() {
         >
           <div className="flex flex-col sm:flex-row items-stretch">
             {pillarPost.image && (
-              <div className="sm:w-2/5 h-48 sm:h-auto overflow-hidden flex-shrink-0">
+              <div className="sm:w-2/5 aspect-video sm:aspect-auto sm:h-auto overflow-hidden flex-shrink-0">
                 <img
                   src={pillarPost.image}
                   alt={pillarPost.title}
@@ -52,7 +52,7 @@ export default function Blog() {
             className="group bg-[#0D1736] border border-cyan-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
           >
             {post.image && (
-              <div className="h-36 overflow-hidden">
+              <div className="aspect-video overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}

@@ -17,7 +17,7 @@ export default function Projects() {
             key={project.id}
             className="group bg-[#0D1736] border border-cyan-500/20 rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] hover:-translate-y-1"
           >
-            <div className="h-72 bg-slate-950 relative overflow-hidden">
+            <div className="aspect-video bg-slate-950 relative overflow-hidden">
               <img
                 src={project.image}
                 alt={project.title}

@@ -18,6 +18,11 @@ export const SITE_URL = 'https://www.veyrodta.com'; // TODO: gerçek domainin
 // 4) Google Analytics 4 ölçüm kimliği (aşağıdaki "Analytics" bölümüne bak)
 export const GA_MEASUREMENT_ID = 'G-REY1DWBF4C';
 
+// 5) Footer'da görünen iletişim bilgileri
+export const CONTACT_EMAIL = 'iletisim@veyrodta.com';
+export const CONTACT_ADDRESS_LINE1 = 'Mimar Sinan 3. Etap';
+export const CONTACT_ADDRESS_LINE2 = '34570 Silivri / İstanbul';
+
 export const whatsappHref = () =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 

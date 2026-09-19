@@ -21,8 +21,8 @@ export default function Kvkk() {
           <p>
             [Adın Soyadın] ("Veyro DTA") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu
             ("KVKK") kapsamında veri sorumlusu sıfatıyla, aşağıda açıklanan kişisel verilerinizi
-            işlemekteyiz. Adres: [iş adresin / ikametgah adresin]. Vergi Dairesi/No: [vergi
-            dairesi / TC kimlik ya da vergi numaran].
+            işlemekteyiz. Adres: Mimar Sinan 3. Etap, 34570 Silivri / İstanbul. Vergi Dairesi/No:
+            [vergi dairesi / TC kimlik ya da vergi numaran].
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function Kvkk() {
         <div>
           <h2 className="text-lg font-bold text-white mb-2">6. Başvuru</h2>
           <p>
-            Yukarıdaki haklarınızı kullanmak için [iletişim e-postanız] adresine yazılı olarak
+            Yukarıdaki haklarınızı kullanmak için iletisim@veyrodta.com adresine yazılı olarak
             başvurabilirsiniz.
           </p>
         </div>
