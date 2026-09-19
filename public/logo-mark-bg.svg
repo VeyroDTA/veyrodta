@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A1128"/>
+      <stop offset="1" stop-color="#040814"/>
+    </linearGradient>
+    <linearGradient id="veyroGrad" x1="90" y1="130" x2="422" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.55" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="112" fill="none" stroke="#22D3EE" stroke-opacity="0.25" stroke-width="2"/>
+  <path
+    d="M110 130 L256 400 L402 130"
+    fill="none"
+    stroke="url(#veyroGrad)"
+    stroke-width="72"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
