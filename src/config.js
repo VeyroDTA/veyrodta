@@ -22,6 +22,7 @@ export const GA_MEASUREMENT_ID = 'G-REY1DWBF4C';
 export const CONTACT_EMAIL = 'iletisim@veyrodta.com';
 export const CONTACT_ADDRESS_LINE1 = 'Mimar Sinan 3. Etap';
 export const CONTACT_ADDRESS_LINE2 = '34570 Silivri / İstanbul';
+export const WORKING_HOURS = 'Hafta içi 09:00 - 18:00'; // TODO: gerçek çalışma saatlerine göre düzenle
 
 export const whatsappHref = () =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
