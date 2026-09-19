@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
+import BlogTopicIcon from '../components/BlogTopicIcon';
 
 export default function Blog() {
   const pillarPost = blogPosts.find((p) => p.pillar);
@@ -22,12 +23,15 @@ export default function Blog() {
         >
           <div className="flex flex-col sm:flex-row items-stretch">
             {pillarPost.image && (
-              <div className="sm:w-2/5 aspect-video sm:aspect-auto sm:h-auto overflow-hidden flex-shrink-0">
+              <div className="relative sm:w-2/5 aspect-video sm:aspect-auto sm:h-auto overflow-hidden flex-shrink-0">
                 <img
                   src={pillarPost.image}
                   alt={pillarPost.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute top-3 left-3">
+                  <BlogTopicIcon icon={pillarPost.icon} className="w-11 h-11" />
+                </div>
               </div>
             )}
             <div className="p-8 sm:p-10">
@@ -52,13 +56,16 @@ export default function Blog() {
             className="group bg-[#0D1736] border border-cyan-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
           >
             {post.image && (
-              <div className="aspect-video overflow-hidden">
+              <div className="relative aspect-video overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute top-3 left-3">
+                  <BlogTopicIcon icon={post.icon} />
+                </div>
               </div>
             )}
             <div className="p-7 flex flex-col justify-between flex-1">

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
+import BlogTopicIcon from '../components/BlogTopicIcon';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -33,8 +34,11 @@ export default function BlogPost() {
       <h1 className="text-3xl sm:text-4xl font-black text-white mb-8 leading-tight">{post.title}</h1>
 
       {post.image && (
-        <div className="rounded-2xl overflow-hidden border border-cyan-500/20 mb-10 shadow-xl">
+        <div className="relative rounded-2xl overflow-hidden border border-cyan-500/20 mb-10 shadow-xl">
           <img src={post.image} alt={post.title} className="w-full h-auto" />
+          <div className="absolute top-4 left-4">
+            <BlogTopicIcon icon={post.icon} className="w-12 h-12" />
+          </div>
         </div>
       )}
 

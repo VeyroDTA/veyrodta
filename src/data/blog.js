@@ -4,6 +4,7 @@
 export const blogPosts = [
   {
     slug: 'profesyonel-web-sitesi-rehberi',
+    icon: 'guide',
     pillar: true,
     category: 'ANA REHBER',
     date: '18 Eylül 2026',
@@ -54,6 +55,7 @@ export const blogPosts = [
   },
   {
     slug: 'site-hizi-satislari-nasil-etkiler',
+    icon: 'speed',
     category: 'MAKALE',
     date: '18 Eylül 2026',
     readTime: '4 dk okuma',
@@ -91,6 +93,7 @@ export const blogPosts = [
   },
   {
     slug: 'ssl-sertifikasi-nedir',
+    icon: 'lock',
     category: 'MAKALE',
     date: '18 Eylül 2026',
     readTime: '3 dk okuma',
@@ -122,6 +125,7 @@ export const blogPosts = [
   },
   {
     slug: 'ucretsiz-site-kurucularinin-gizli-maliyetleri',
+    icon: 'cost',
     category: 'MAKALE',
     date: '18 Eylül 2026',
     readTime: '5 dk okuma',
@@ -158,6 +162,7 @@ export const blogPosts = [
   },
   {
     slug: 'mobil-uyumlu-web-sitesi-neden-onemli',
+    icon: 'mobile',
     category: 'MAKALE',
     date: '19 Eylül 2026',
     readTime: '4 dk okuma',
@@ -200,6 +205,7 @@ export const blogPosts = [
   },
   {
     slug: 'seo-nedir-google-gorunurluk-rehberi',
+    icon: 'seo',
     category: 'MAKALE',
     date: '19 Eylül 2026',
     readTime: '6 dk okuma',
@@ -248,6 +254,7 @@ export const blogPosts = [
   },
   {
     slug: 'iyi-web-sitesi-tasarim-7-ozellik',
+    icon: 'checklist',
     category: 'MAKALE',
     date: '19 Eylül 2026',
     readTime: '5 dk okuma',
@@ -302,6 +309,7 @@ export const blogPosts = [
   },
   {
     slug: 'web-sitesi-hangi-teknolojiler-kullanilmali',
+    icon: 'code',
     category: 'MAKALE',
     date: '19 Eylül 2026',
     readTime: '5 dk okuma',
@@ -350,6 +358,7 @@ export const blogPosts = [
   },
   {
     slug: 'kurumsal-web-sitesi-mi-eticaret-mi',
+    icon: 'compare',
     category: 'MAKALE',
     date: '19 Eylül 2026',
     readTime: '4 dk okuma',
@@ -386,6 +395,7 @@ export const blogPosts = [
   },
   {
     slug: 'ziyaretci-neden-musteriye-donusmuyor',
+    icon: 'funnel',
     category: 'MAKALE',
     date: '19 Eylül 2026',
     readTime: '5 dk okuma',
