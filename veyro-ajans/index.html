@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#040814" />
+
+    <!-- TODO: Site yayına girince başlığı/açıklamayı gözden geçir, src/config.js içindeki SITE_URL'i güncelle -->
+    <title>Veyro DTA | Kurumsal Web Tasarım & Dijital Çözümler</title>
+    <meta
+      name="description"
+      content="Veyro DTA; kurumsal web sitesi, e-ticaret ve randevu sistemleri kuruyor. Şeffaf fiyatlandırma, anahtar teslim dijital çözümler ve profesyonel destek."
+    />
+    <link rel="canonical" href="https://www.veyrodta.com/" />
+
+    <!-- Open Graph / WhatsApp, Facebook paylaşım önizlemesi -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Veyro DTA" />
+    <meta property="og:title" content="Veyro DTA | Kurumsal Web Tasarım & Dijital Çözümler" />
+    <meta
+      property="og:description"
+      content="Web sitenizi değil işinizi tasarlıyoruz. Kurumsal web, e-ticaret ve randevu sistemleri için şeffaf fiyatlarla anahtar teslim çözümler."
+    />
+    <meta property="og:image" content="https://www.veyrodta.com/og-image.jpg" />
+    <meta property="og:url" content="https://www.veyrodta.com/" />
+
+    <!-- Twitter/X paylaşım önizlemesi -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Veyro DTA | Kurumsal Web Tasarım & Dijital Çözümler" />
+    <meta
+      name="twitter:description"
+      content="Web sitenizi değil işinizi tasarlıyoruz. Kurumsal web, e-ticaret ve randevu sistemleri için şeffaf fiyatlarla anahtar teslim çözümler."
+    />
+    <meta name="twitter:image" content="https://www.veyrodta.com/og-image.jpg" />
+
+    <!--
+      Font: Eskiden App.jsx içinde bir <style> etiketi içinde @import olarak
+      yükleniyordu, bu da React mount olana kadar isteğin başlamamasına yol
+      açıyordu (görünür metin gecikmesi / FOUT). Burada erkenden ve doğrudan
+      yükleniyor. 6 ağırlık yerine gerçekten kullanılan 3 tanesi bırakıldı.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+    />
+
+    <!--
+      Google Analytics 4 — kuruldu (Ölçüm Kimliği: G-REY1DWBF4C).
+      Realtime raporunda kendi ziyaretini görmek için: analytics.google.com →
+      Rapor → Anlık.
+    -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REY1DWBF4C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      // send_page_view kapalı: sayfa görüntülemeleri src/components/ScrollToTop.jsx
+      // tarafından her rota değişiminde manuel gönderiliyor (SPA olduğu için gerekli).
+      gtag('config', 'G-REY1DWBF4C', { send_page_view: false });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
