@@ -51,22 +51,18 @@
     />
 
     <!--
-      Google Analytics 4
-      src/config.js içindeki GA_MEASUREMENT_ID hâlâ "G-XXXXXXXXXX" placeholder'ı.
-      1) analytics.google.com'da bir GA4 mülkü oluştur, sana "G-" ile başlayan
-         bir Ölçüm Kimliği verecek.
-      2) O kimliği HEM aşağıdaki iki satıra HEM DE src/config.js'teki
-         GA_MEASUREMENT_ID'ye yapıştır (ikisi de aynı değeri kullanmalı).
-      Doldurmazsan site yine sorunsuz çalışır, sadece istatistik toplanmaz.
+      Google Analytics 4 — kuruldu (Ölçüm Kimliği: G-REY1DWBF4C).
+      Realtime raporunda kendi ziyaretini görmek için: analytics.google.com →
+      Rapor → Anlık.
     -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REY1DWBF4C"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       // send_page_view kapalı: sayfa görüntülemeleri src/components/ScrollToTop.jsx
       // tarafından her rota değişiminde manuel gönderiliyor (SPA olduğu için gerekli).
-      gtag('config', 'G-XXXXXXXXXX', { send_page_view: false });
+      gtag('config', 'G-REY1DWBF4C', { send_page_view: false });
     </script>
   </head>
   <body>

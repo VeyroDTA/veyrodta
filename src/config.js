@@ -16,7 +16,7 @@ export const FORM_ENDPOINT = 'https://formspree.io/f/xjykklyo';
 export const SITE_URL = 'https://www.veyrodta.com'; // TODO: gerçek domainin
 
 // 4) Google Analytics 4 ölçüm kimliği (aşağıdaki "Analytics" bölümüne bak)
-export const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: kendi GA4 Ölçüm Kimliğini gir
+export const GA_MEASUREMENT_ID = 'G-REY1DWBF4C';
 
 export const whatsappHref = () =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
