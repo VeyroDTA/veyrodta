@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
 import BlogTopicIcon from '../components/BlogTopicIcon';
+import BlogCardCover from '../components/BlogCardCover';
 
 export default function Blog() {
   const pillarPost = blogPosts.find((p) => p.pillar);
@@ -49,25 +50,15 @@ export default function Blog() {
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map((post) => (
+        {articles.map((post, index) => (
           <Link
             key={post.slug}
             to={`/blog/${post.slug}`}
             className="group bg-[#0D1736] border border-cyan-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-cyan-400/50 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
           >
-            {post.image && (
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-3 left-3">
-                  <BlogTopicIcon icon={post.icon} />
-                </div>
-              </div>
-            )}
+            <div className="aspect-video overflow-hidden transition-transform duration-500 group-hover:scale-105">
+              <BlogCardCover icon={post.icon} index={index} />
+            </div>
             <div className="p-7 flex flex-col justify-between flex-1">
               <div>
                 <div className="flex items-center gap-2 mb-3">

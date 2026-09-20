@@ -38,6 +38,48 @@
     <meta name="twitter:image" content="https://www.veyrodta.com/og-image.jpg" />
 
     <!--
+      LocalBusiness şeması (schema.org): Google'ın işletmeyi anlamasına ve yerel
+      aramalarda (ör. "Silivri web tasarım", "İstanbul web tasarım") bir işletme
+      kartı/bilgi paneli olarak göstermesine yardımcı olur.
+
+      DİKKAT: Buradaki telephone/email/address, src/config.js'teki değerlerle
+      aynı olmalı — orayı değiştirirsen burayı da elle güncellemen gerekir
+      (index.html statik bir dosya, config.js'i build zamanında okumuyor).
+      Domain bağlandığında "url" ve "image" alanlarını da güncelle.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Veyro DTA",
+        "image": "https://www.veyrodta.com/og-image.jpg",
+        "logo": "https://www.veyrodta.com/icon-512.png",
+        "url": "https://www.veyrodta.com/",
+        "telephone": "+905394500402",
+        "email": "iletisim@veyrodta.com",
+        "priceRange": "13.900₺ - 49.900₺",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Mimar Sinan 3. Etap",
+          "addressLocality": "Silivri",
+          "addressRegion": "İstanbul",
+          "postalCode": "34570",
+          "addressCountry": "TR"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "İstanbul" },
+          { "@type": "Country", "name": "Türkiye" }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      }
+    </script>
+
+    <!--
       Font: Eskiden App.jsx içinde bir <style> etiketi içinde @import olarak
       yükleniyordu, bu da React mount olana kadar isteğin başlamamasına yol
       açıyordu (görünür metin gecikmesi / FOUT). Burada erkenden ve doğrudan
