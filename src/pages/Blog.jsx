@@ -22,9 +22,9 @@ export default function Blog() {
           to={`/blog/${pillarPost.slug}`}
           className="group block mb-10 bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 border border-cyan-400/40 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(6,182,212,0.25)] hover:shadow-[0_0_40px_rgba(6,182,212,0.22)] transition-all"
         >
-          <div className="flex flex-col sm:flex-row items-stretch">
+          <div className="flex flex-col sm:flex-row sm:items-center">
             {pillarPost.image && (
-              <div className="relative sm:w-2/5 aspect-video sm:aspect-auto sm:h-auto overflow-hidden flex-shrink-0">
+              <div className="relative sm:w-2/5 aspect-video overflow-hidden flex-shrink-0">
                 <img
                   src={pillarPost.image}
                   alt={pillarPost.title}
