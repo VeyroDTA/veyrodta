@@ -1,9 +1,9 @@
 export default function Kvkk() {
   return (
-    <section className="max-w-3xl mx-auto px-6 py-20 text-slate-300 text-sm leading-relaxed">
+    <section className="max-w-3xl mx-auto px-6 py-20 text-slate-600 text-sm leading-relaxed">
       <div className="text-center mb-14">
-        <span className="text-cyan-400 font-bold text-xs uppercase tracking-widest block mb-2">YASAL</span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">KVKK Aydınlatma Metni</h1>
+        <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">YASAL</span>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">KVKK Aydınlatma Metni</h1>
       </div>
 
       {/*
@@ -17,7 +17,7 @@ export default function Kvkk() {
 
       <div className="space-y-8">
         <div>
-          <h2 className="text-lg font-bold text-white mb-2">1. Veri Sorumlusu</h2>
+          <h2 className="text-lg font-bold text-slate-900 mb-2">1. Veri Sorumlusu</h2>
           <p>
             [Adın Soyadın] ("Veyro DTA") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu
             ("KVKK") kapsamında veri sorumlusu sıfatıyla, aşağıda açıklanan kişisel verilerinizi
@@ -27,7 +27,7 @@ export default function Kvkk() {
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-white mb-2">2. İşlenen Kişisel Veriler</h2>
+          <h2 className="text-lg font-bold text-slate-900 mb-2">2. İşlenen Kişisel Veriler</h2>
           <p>
             İletişim formumuzu doldurduğunuzda ad-soyad, e-posta adresi, telefon numarası ve
             bize ilettiğiniz proje detaylarına ilişkin kişisel verileriniz işlenmektedir.
@@ -35,7 +35,7 @@ export default function Kvkk() {
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-white mb-2">3. İşleme Amacı</h2>
+          <h2 className="text-lg font-bold text-slate-900 mb-2">3. İşleme Amacı</h2>
           <p>
             Kişisel verileriniz; tarafınıza teklif sunulması, talebinizin değerlendirilmesi,
             sizinle iletişime geçilmesi ve mevzuattan doğan yükümlülüklerin yerine getirilmesi
@@ -44,7 +44,7 @@ export default function Kvkk() {
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-white mb-2">4. Kişisel Verilerin Aktarılması</h2>
+          <h2 className="text-lg font-bold text-slate-900 mb-2">4. Kişisel Verilerin Aktarılması</h2>
           <p>
             Verileriniz, form gönderiminin teknik altyapısını sağlayan hizmet sağlayıcımız
             (Formspree) ve yalnızca hizmetin ifası için gerekli olduğu ölçüde ilgili tedarikçilerimiz
@@ -54,7 +54,7 @@ export default function Kvkk() {
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-white mb-2">5. Haklarınız</h2>
+          <h2 className="text-lg font-bold text-slate-900 mb-2">5. Haklarınız</h2>
           <p>
             KVKK'nın 11. maddesi uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme,
             işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp
@@ -65,7 +65,7 @@ export default function Kvkk() {
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-white mb-2">6. Başvuru</h2>
+          <h2 className="text-lg font-bold text-slate-900 mb-2">6. Başvuru</h2>
           <p>
             Yukarıdaki haklarınızı kullanmak için iletisim@veyrodta.com adresine yazılı olarak
             başvurabilirsiniz.

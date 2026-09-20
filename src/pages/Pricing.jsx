@@ -75,10 +75,10 @@ export default function Pricing() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <span className="text-cyan-400 font-bold text-xs uppercase tracking-widest block mb-2">ŞEFFAF FİYATLANDIRMA</span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">İhtiyacınıza Uygun Paketi Seçin</h2>
-        <p className="text-slate-300 text-sm">Gizli maliyet yok, sürpriz yok. İşletmenizi büyütmek için en net çözümler.</p>
-        <span className="inline-block mt-4 text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 px-4 py-1.5 rounded-full">
+        <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">ŞEFFAF FİYATLANDIRMA</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">İhtiyacınıza Uygun Paketi Seçin</h2>
+        <p className="text-slate-500 text-sm">Gizli maliyet yok, sürpriz yok. İşletmenizi büyütmek için en net çözümler.</p>
+        <span className="inline-block mt-4 text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full">
           Tüm fiyatlarımıza KDV dahildir
         </span>
       </div>
@@ -89,12 +89,12 @@ export default function Pricing() {
             key={pkg.name}
             className={
               pkg.highlight
-                ? 'bg-gradient-to-br from-[#2E2410] via-[#1A1408] to-[#0D1736] border-2 border-amber-400/80 rounded-2xl p-6 flex flex-col justify-between relative shadow-[0_0_18px_rgba(245,158,11,0.15)]'
-                : 'bg-gradient-to-br from-[#0D1736] to-[#070E24] border border-cyan-500/20 rounded-2xl p-6 flex flex-col justify-between shadow-xl'
+                ? 'bg-amber-50 border-2 border-amber-400 rounded-2xl p-6 flex flex-col justify-between relative shadow-md'
+                : 'bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm'
             }
           >
             {pkg.highlight && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-[0_4px_16px_rgba(245,158,11,0.45)] border border-amber-200/60">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-900 text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wide shadow-md">
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20" aria-hidden="true">
                   <path d="M10 1.5l2.472 5.01 5.528.803-4 3.899.944 5.507L10 14.14l-4.944 2.6.944-5.508-4-3.898 5.528-.803L10 1.5z" />
                 </svg>
@@ -102,10 +102,10 @@ export default function Pricing() {
               </div>
             )}
             <div>
-              <h3 className={`text-lg font-bold text-white mb-1 ${pkg.highlight ? 'mt-2' : ''}`}>{pkg.name}</h3>
-              <p className="text-xs text-slate-400 mb-4">{pkg.desc}</p>
-              <div className={`text-2xl font-black mb-6 ${pkg.highlight ? 'text-amber-300' : 'text-cyan-400'}`}>{pkg.price}</div>
-              <ul className="space-y-2 text-sm text-slate-300 mb-6">
+              <h3 className={`text-lg font-bold text-slate-900 mb-1 ${pkg.highlight ? 'mt-2' : ''}`}>{pkg.name}</h3>
+              <p className="text-xs text-slate-500 mb-4">{pkg.desc}</p>
+              <div className={`text-2xl font-black mb-6 ${pkg.highlight ? 'text-amber-600' : 'text-blue-700'}`}>{pkg.price}</div>
+              <ul className="space-y-2 text-sm text-slate-600 mb-6">
                 {pkg.features.map((f) => (
                   <li key={f}>✓ {f}</li>
                 ))}
@@ -115,8 +115,8 @@ export default function Pricing() {
               to="/iletisim"
               className={
                 pkg.highlight
-                  ? 'w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-extrabold py-3.5 rounded-xl text-sm shadow-lg hover:scale-105 transition-all cursor-pointer'
-                  : 'w-full text-center bg-[#112048] hover:bg-cyan-600 text-white font-bold py-3 rounded-xl text-sm transition-all cursor-pointer'
+                  ? 'w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 text-slate-900 font-extrabold py-3.5 rounded-xl text-sm shadow-md hover:scale-105 transition-all cursor-pointer'
+                  : 'w-full text-center bg-slate-900 hover:bg-blue-800 text-white font-bold py-3 rounded-xl text-sm transition-all cursor-pointer'
               }
             >
               {pkg.cta}
@@ -131,28 +131,28 @@ export default function Pricing() {
         aşamasında netleştirilir; dilerseniz kendi domain/hosting sağlayıcınızı da kullanabilirsiniz.
       </p>
 
-      <div className="pt-16 border-t border-cyan-500/20">
+      <div className="pt-16 border-t border-slate-200">
         <div className="text-center max-w-xl mx-auto mb-12">
-          <span className="text-cyan-400 font-bold text-xs uppercase tracking-widest block mb-2">EK HİZMETLER</span>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">Paketinizi Güçlendirin</h3>
-          <p className="text-slate-300 text-sm">Ek modüllerle web sitenizin yeteneklerini hemen artırın.</p>
+          <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">EK HİZMETLER</span>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-2">Paketinizi Güçlendirin</h3>
+          <p className="text-slate-500 text-sm">Ek modüllerle web sitenizin yeteneklerini hemen artırın.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {addons.map((addon) => (
-            <div key={addon.title} className="bg-gradient-to-br from-[#0D1736] to-[#070E24] border border-cyan-500/20 p-6 rounded-2xl flex flex-col justify-between shadow-xl">
+            <div key={addon.title} className="bg-white border border-slate-200 p-6 rounded-2xl flex flex-col justify-between shadow-sm">
               <div>
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-300 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 mb-4">
                   <svg className="w-6 h-6 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                     {addon.icon}
                   </svg>
                 </div>
-                <h4 className="text-base font-bold text-white mb-1">{addon.title}</h4>
-                <p className="text-xs text-slate-300 mb-4 leading-relaxed">{addon.desc}</p>
+                <h4 className="text-base font-bold text-slate-900 mb-1">{addon.title}</h4>
+                <p className="text-xs text-slate-500 mb-4 leading-relaxed">{addon.desc}</p>
               </div>
               <div>
-                <div className="text-xl font-black text-cyan-400 mb-4">{addon.price}</div>
-                <Link to="/iletisim" className="block w-full text-center bg-[#112048] hover:bg-cyan-600 text-white font-bold py-2.5 rounded-xl text-xs cursor-pointer">
+                <div className="text-xl font-black text-blue-700 mb-4">{addon.price}</div>
+                <Link to="/iletisim" className="block w-full text-center bg-slate-900 hover:bg-blue-800 text-white font-bold py-2.5 rounded-xl text-xs cursor-pointer">
                   Ekle →
                 </Link>
               </div>

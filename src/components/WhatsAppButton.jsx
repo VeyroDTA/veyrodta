@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent('whatsapp_click')}
-      className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_18px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-110 border border-emerald-400/30"
+      className="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/25 transition-all duration-300 hover:scale-110"
       aria-label="WhatsApp ile Hemen Görüşün"
       title="WhatsApp ile Hemen Görüşün"
     >

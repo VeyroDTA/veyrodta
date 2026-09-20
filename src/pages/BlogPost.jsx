@@ -22,19 +22,19 @@ export default function BlogPost() {
 
   return (
     <article className="max-w-3xl mx-auto px-6 py-20">
-      <Link to="/blog" className="inline-flex items-center gap-1.5 text-cyan-400 text-sm font-semibold mb-8 hover:text-cyan-300">
+      <Link to="/blog" className="inline-flex items-center gap-1.5 text-blue-700 text-sm font-semibold mb-8 hover:text-blue-800">
         <span aria-hidden="true">←</span> Tüm Yazılar
       </Link>
 
       <div className="flex items-center gap-2 mb-4">
-        <span className="text-cyan-400 font-bold text-xs uppercase tracking-widest">{post.category}</span>
-        <span className="text-slate-500 text-xs">· {post.date} · {post.readTime}</span>
+        <span className="text-blue-700 font-bold text-xs uppercase tracking-widest">{post.category}</span>
+        <span className="text-slate-400 text-xs">· {post.date} · {post.readTime}</span>
       </div>
 
-      <h1 className="text-3xl sm:text-4xl font-black text-white mb-8 leading-tight">{post.title}</h1>
+      <h1 className="text-3xl sm:text-4xl font-black text-slate-900 mb-8 leading-tight">{post.title}</h1>
 
       {post.image && (
-        <div className="relative rounded-2xl overflow-hidden border border-cyan-500/20 mb-10 shadow-xl">
+        <div className="relative rounded-2xl overflow-hidden border border-slate-200 mb-10 shadow-sm">
           <img src={post.image} alt={post.title} className="w-full h-auto" />
           <div className="absolute top-4 left-4">
             <BlogTopicIcon icon={post.icon} className="w-12 h-12" />
@@ -45,8 +45,8 @@ export default function BlogPost() {
       <div className="space-y-10">
         {post.sections.map((section, i) => (
           <div key={i}>
-            <h2 className="text-xl font-bold text-cyan-300 mb-3">{section.heading}</h2>
-            <div className="space-y-4 text-slate-300 text-sm leading-relaxed">
+            <h2 className="text-xl font-bold text-blue-800 mb-3">{section.heading}</h2>
+            <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
               {section.body.map((paragraph, j) => (
                 <p key={j}>{paragraph}</p>
               ))}
@@ -55,12 +55,12 @@ export default function BlogPost() {
         ))}
       </div>
 
-      <div className="mt-14 pt-8 border-t border-cyan-500/20 bg-gradient-to-r from-[#112048] to-[#040814] border border-cyan-500/30 rounded-2xl p-8 text-center">
+      <div className="mt-14 bg-slate-900 rounded-2xl p-8 text-center">
         <h3 className="text-xl font-bold text-white mb-2">Projenizi konuşalım mı?</h3>
         <p className="text-sm text-slate-400 mb-5">Bu yazıda anlattığımız standartlarla, sizin için de anahtar teslim bir web sitesi kurabiliriz.</p>
         <Link
           to="/iletisim"
-          className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-extrabold px-8 py-3.5 rounded-xl shadow-lg hover:scale-105 transition-all"
+          className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-slate-900 font-extrabold px-8 py-3.5 rounded-xl shadow-lg hover:scale-105 transition-all"
         >
           Ücretsiz Teklif Al →
         </Link>

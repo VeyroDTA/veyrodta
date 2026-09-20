@@ -37,7 +37,7 @@ export default function ProjectModal({ project, onClose }) {
       role="presentation"
     >
       <div
-        className="bg-gradient-to-b from-[#2B468C] via-[#1E3675] to-[#142654] border border-cyan-400/70 rounded-3xl max-w-2xl w-full p-8 relative shadow-[0_0_35px_rgba(6,182,212,0.18)]"
+        className="bg-white border border-slate-200 rounded-3xl max-w-2xl w-full p-8 relative shadow-2xl"
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
@@ -46,37 +46,37 @@ export default function ProjectModal({ project, onClose }) {
         <button
           ref={closeBtnRef}
           onClick={onClose}
-          className="absolute top-6 right-6 text-slate-200 hover:text-white hover:bg-cyan-500/40 text-xl font-bold w-10 h-10 rounded-full bg-slate-900/80 flex items-center justify-center transition-all cursor-pointer"
+          className="absolute top-6 right-6 text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-xl font-bold w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center transition-all cursor-pointer"
           aria-label="Kapat"
         >
           ✕
         </button>
-        <span className="text-xs text-cyan-300 font-extrabold uppercase tracking-widest">{project.category}</span>
-        <h3 id="project-modal-title" className="text-3xl font-black text-white mt-1 mb-2">
+        <span className="text-xs text-blue-700 font-extrabold uppercase tracking-widest">{project.category}</span>
+        <h3 id="project-modal-title" className="text-3xl font-black text-slate-900 mt-1 mb-2">
           {project.title} - İnceleme
         </h3>
         {project.concept && (
-          <span className="inline-block text-[11px] font-bold text-amber-300 bg-amber-500/15 border border-amber-500/40 px-3 py-1 rounded-full uppercase tracking-wide mb-4">
+          <span className="inline-block text-[11px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full uppercase tracking-wide mb-4">
             Konsept Çalışma
           </span>
         )}
 
-        <div className="space-y-4 text-sm text-slate-100 mb-8 mt-4">
-          <div className="bg-[#233E82] p-5 rounded-2xl border border-cyan-400/40 shadow-lg">
-            <span className="text-cyan-300 font-bold tracking-wide text-base block mb-1">Karşılaşılan Problem:</span>
-            <span className="text-slate-200 leading-relaxed font-medium block">{project.problem}</span>
+        <div className="space-y-4 text-sm text-slate-700 mb-8 mt-4">
+          <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+            <span className="text-blue-700 font-bold tracking-wide text-base block mb-1">Karşılaşılan Problem:</span>
+            <span className="text-slate-600 leading-relaxed font-medium block">{project.problem}</span>
           </div>
 
-          <div className="bg-[#233E82] p-5 rounded-2xl border border-cyan-400/40 shadow-lg">
-            <span className="text-cyan-300 font-bold tracking-wide text-base block mb-1">Veyro Çözümü:</span>
-            <span className="text-slate-200 leading-relaxed font-medium block">{project.solution}</span>
+          <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+            <span className="text-blue-700 font-bold tracking-wide text-base block mb-1">Veyro Çözümü:</span>
+            <span className="text-slate-600 leading-relaxed font-medium block">{project.solution}</span>
           </div>
 
-          <div className="bg-[#233E82] p-5 rounded-2xl border border-cyan-400/40 shadow-lg">
-            <span className="text-cyan-300 font-bold tracking-wide text-base block mb-1">
+          <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
+            <span className="text-blue-700 font-bold tracking-wide text-base block mb-1">
               {project.concept ? 'Hedeflenen Sonuç:' : 'Elde Edilen Sonuç:'}
             </span>
-            <span className="text-slate-200 leading-relaxed font-medium block">{project.result}</span>
+            <span className="text-slate-600 leading-relaxed font-medium block">{project.result}</span>
           </div>
         </div>
 
@@ -86,7 +86,7 @@ export default function ProjectModal({ project, onClose }) {
               onClose();
               navigate('/iletisim');
             }}
-            className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-bold px-8 py-3.5 rounded-xl text-sm shadow-[0_0_16px_rgba(245,158,11,0.3)] transition-all cursor-pointer"
+            className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-900 font-bold px-8 py-3.5 rounded-xl text-sm shadow-md shadow-amber-500/20 transition-all cursor-pointer"
           >
             Benzer Proje İçin Teklif Al →
           </button>

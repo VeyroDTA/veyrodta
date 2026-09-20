@@ -41,11 +41,11 @@ const guarantees = [
 
 export default function TrustSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 border-t border-cyan-500/20">
+    <section className="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200">
       <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="text-cyan-400 font-extrabold text-xs uppercase tracking-[0.2em] block mb-3">NEDEN VEYRO DTA?</span>
-        <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Sözümüzü Tutarız</h2>
-        <p className="text-slate-300 text-sm">
+        <span className="text-blue-700 font-extrabold text-xs uppercase tracking-[0.2em] block mb-3">NEDEN VEYRO DTA?</span>
+        <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Sözümüzü Tutarız</h2>
+        <p className="text-slate-500 text-sm">
           Henüz yayında olmadığımız için elimizde müşteri yorumu yok — ama sana verdiğimiz sözler net.
         </p>
       </div>
@@ -54,15 +54,15 @@ export default function TrustSection() {
         {guarantees.map((g) => (
           <div
             key={g.title}
-            className="bg-gradient-to-br from-[#0D1736] to-[#070E24] border border-cyan-500/20 rounded-2xl p-6 shadow-xl"
+            className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-400/40 flex items-center justify-center text-cyan-300 mb-4">
+            <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 mb-4">
               <svg className="w-6 h-6 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                 {g.icon}
               </svg>
             </div>
-            <h3 className="text-base font-bold text-white mb-2">{g.title}</h3>
-            <p className="text-xs text-slate-400 leading-relaxed">{g.desc}</p>
+            <h3 className="text-base font-bold text-slate-900 mb-2">{g.title}</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">{g.desc}</p>
           </div>
         ))}
       </div>

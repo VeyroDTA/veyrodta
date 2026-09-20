@@ -4,7 +4,7 @@ export default function CallButton() {
   return (
     <a
       href={phoneHref()}
-      className="fixed bottom-6 left-6 z-50 flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-bold text-sm pl-3.5 pr-5 py-3.5 rounded-full shadow-[0_0_18px_rgba(245,158,11,0.3)] transition-all hover:scale-105 border border-amber-300/40"
+      className="fixed bottom-6 left-6 z-50 flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-900 font-bold text-sm pl-3.5 pr-5 py-3.5 rounded-full shadow-lg shadow-amber-500/25 transition-all hover:scale-105"
       aria-label="Hemen Ara"
     >
       <svg className="w-5 h-5 fill-current flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">

@@ -25,26 +25,26 @@ export default function Faq() {
   return (
     <section className="max-w-4xl mx-auto px-6 py-20">
       <div className="text-center mb-16">
-        <span className="text-cyan-400 font-bold text-xs uppercase tracking-widest block mb-2">MERAK EDİLENLER</span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Sık Sorulan Sorular</h2>
+        <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">MERAK EDİLENLER</span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Sık Sorulan Sorular</h2>
       </div>
       <div className="space-y-4">
         {faqs.map((faq, index) => {
           const isOpen = openFaq === index;
           const panelId = `faq-panel-${index}`;
           return (
-            <div key={index} className="bg-[#0D1736] border border-cyan-500/20 rounded-2xl overflow-hidden shadow-lg">
+            <div key={index} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
               <button
                 onClick={() => setOpenFaq(isOpen ? null : index)}
-                className="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center cursor-pointer"
+                className="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center cursor-pointer"
                 aria-expanded={isOpen}
                 aria-controls={panelId}
               >
                 <span>{faq.q}</span>
-                <span className="text-cyan-400 text-xl" aria-hidden="true">{isOpen ? '-' : '+'}</span>
+                <span className="text-blue-700 text-xl" aria-hidden="true">{isOpen ? '-' : '+'}</span>
               </button>
               {isOpen && (
-                <div id={panelId} className="px-6 pb-5 text-sm text-slate-300 border-t border-cyan-500/20 pt-4 leading-relaxed">
+                <div id={panelId} className="px-6 pb-5 text-sm text-slate-600 border-t border-slate-200 pt-4 leading-relaxed">
                   {faq.a}
                 </div>
               )}

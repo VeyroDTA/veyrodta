@@ -15,7 +15,7 @@ export default function ScrollToTopButton() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      className="fixed bottom-24 right-6 z-50 bg-[#112048] hover:bg-cyan-600 text-cyan-300 hover:text-white w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-cyan-500/30 transition-all hover:scale-110"
+      className="fixed bottom-24 right-6 z-50 bg-white hover:bg-slate-50 text-slate-600 hover:text-blue-700 w-11 h-11 rounded-full flex items-center justify-center shadow-lg border border-slate-200 transition-all hover:scale-110"
       aria-label="Sayfanın başına dön"
       title="Sayfanın başına dön"
     >

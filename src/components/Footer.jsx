@@ -20,7 +20,7 @@ const siteLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-cyan-500/25">
+    <footer className="bg-slate-900">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 sm:grid-cols-4 gap-10 text-sm">
         <div className="col-span-2 sm:col-span-1">
           <div className="text-lg font-black tracking-[0.1em] text-white mb-2">VEYRO</div>
@@ -28,7 +28,7 @@ export default function Footer() {
             Web sitenizi değil işinizi tasarlıyoruz. Modern, hızlı ve dönüşüm odaklı web
             çözümleri.
           </p>
-          <span className="text-[11px] text-cyan-400 font-semibold">Veyro DTA · Dijital Tasarım Atölyesi</span>
+          <span className="text-[11px] text-blue-400 font-semibold">Veyro DTA · Dijital Tasarım Atölyesi</span>
         </div>
 
         <div>
@@ -36,7 +36,7 @@ export default function Footer() {
           <ul className="space-y-2.5 text-slate-400 text-xs">
             {serviceLinks.map((l) => (
               <li key={l.label}>
-                <Link to={l.to} className="hover:text-cyan-400 transition-colors">
+                <Link to={l.to} className="hover:text-blue-400 transition-colors">
                   {l.label}
                 </Link>
               </li>
@@ -49,7 +49,7 @@ export default function Footer() {
           <ul className="space-y-2.5 text-slate-400 text-xs">
             {siteLinks.map((l) => (
               <li key={l.label}>
-                <Link to={l.to} className="hover:text-cyan-400 transition-colors">
+                <Link to={l.to} className="hover:text-blue-400 transition-colors">
                   {l.label}
                 </Link>
               </li>
@@ -64,12 +64,12 @@ export default function Footer() {
             <li>{CONTACT_ADDRESS_LINE1}</li>
             <li>{CONTACT_ADDRESS_LINE2}</li>
             <li>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-cyan-400 transition-colors">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-blue-400 transition-colors">
                 {CONTACT_EMAIL}
               </a>
             </li>
             <li>
-              <a href={phoneHref()} className="hover:text-cyan-400 transition-colors">
+              <a href={phoneHref()} className="hover:text-blue-400 transition-colors">
                 {phoneDisplay()}
               </a>
             </li>
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-center text-[11px] text-slate-500 pb-8 pt-6 border-t border-cyan-500/10 mx-6">
+      <div className="text-center text-[11px] text-slate-500 pb-8 pt-6 border-t border-slate-800 mx-6">
         © {new Date().getFullYear()} Veyro DTA. Tüm hakları saklıdır.
       </div>
       {/*

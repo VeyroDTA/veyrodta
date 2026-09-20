@@ -19,7 +19,7 @@ const paths = {
 export default function BlogTopicIcon({ icon, className = 'w-10 h-10' }) {
   if (!icon || !paths[icon]) return null;
   return (
-    <div className={`${className} rounded-full bg-slate-950/80 backdrop-blur-sm border border-cyan-400/50 flex items-center justify-center text-cyan-300 shadow-lg`}>
+    <div className={`${className} rounded-full bg-white/95 backdrop-blur-sm border border-white/60 flex items-center justify-center text-blue-700 shadow-md`}>
       <svg className="w-1/2 h-1/2 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
         {paths[icon]}
       </svg>
