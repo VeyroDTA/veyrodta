@@ -1,16 +1,39 @@
-# React + Vite
+# Veyro DTA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Veyro DTA'nın kurumsal web sitesi. React + Vite + Tailwind CSS ile geliştirildi.
 
-Currently, two official plugins are available:
+## Geliştirme
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Yapı
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/pages/` — her sayfa (Anasayfa, Fiyatlar, Projelerimiz, Blog, SSS, İletişim, KVKK)
+- `src/components/` — paylaşılan bileşenler (Navbar, Footer, WhatsApp/Ara butonları vb.)
+- `src/data/` — proje, blog yazısı, SSS ve fiyat verileri
+- `src/config.js` — **tek yerden değiştirilen ayarlar**: WhatsApp numarası, telefon,
+  e-posta, adres, Formspree form adresi, GA4 Ölçüm Kimliği, site URL'si
 
-## Expanding the ESLint configuration
+## Barındırma (Hosting)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Bu proje **Cloudflare Workers (static assets)** üzerinde barınıyor (Vercel'in ücretsiz
+planı ticari kullanıma kapalı olduğu için Cloudflare'e geçildi — onun ücretsiz planı
+statik siteler için ticari kullanıma açık).
+
+- Build komutu: `npm run build`
+- Çıktı klasörü: `dist`
+- `wrangler.jsonc` dosyası, React Router'ın client-side sayfalarının (`/fiyatlar`,
+  `/blog/:slug` gibi) doğrudan URL ile açılınca ya da sayfa yenilenince 404 vermemesi
+  için gerekli (`not_found_handling: single-page-application`) — silme.
+- `main` branch'ine her `git push` otomatik olarak yeni bir deploy tetikler.
+
+## Yayına almadan / domain bağlarken kontrol listesi
+
+- [ ] `src/config.js` içindeki `SITE_URL`'i gerçek domain ile güncelle
+- [ ] `public/robots.txt` ve `public/sitemap.xml` içindeki URL'leri güncelle
+- [ ] `index.html` içindeki `og:url`, `og:image`, `canonical` linklerini güncelle
+- [ ] GA4'te (analytics.google.com) veri akışının URL'sini güncelle (zorunlu değil ama önerilir)
+- [ ] `src/pages/Kvkk.jsx` içindeki `[Adın Soyadın]` ve `[vergi/TC no]` alanlarını doldur
