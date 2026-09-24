@@ -43,7 +43,7 @@ export default function TrustSection() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20 border-t border-slate-200">
       <div className="text-center max-w-2xl mx-auto mb-14">
-        <span className="text-blue-700 font-extrabold text-xs uppercase tracking-[0.2em] block mb-3">NEDEN VEYRO DTA?</span>
+        <span className="text-blue-700 font-extrabold text-xs uppercase tracking-[0.2em] block mb-3">NEDEN UGR STUDIO?</span>
         <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Sözümüzü Tutarız</h2>
         <p className="text-slate-500 text-sm">
           Henüz yayında olmadığımız için elimizde müşteri yorumu yok — ama sana verdiğimiz sözler net.

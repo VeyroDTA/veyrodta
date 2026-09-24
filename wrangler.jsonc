@@ -1,4 +1,9 @@
 {
+  // "name" bilerek "veyrodta" olarak bırakıldı (marka artık UGR Studio olsa da).
+  // Bunu değiştirmek Cloudflare'de YENİ bir worker/URL oluşturur, mevcut canlı
+  // adresi (veyrodta.yapayzekagmail.workers.dev) kırar. Kendi domainini
+  // bağladığında zaten görünen adres sadece o domain olacağı için bu iç isim
+  // hiçbir yerde görünmüyor — dokunmadan bırakman en güvenlisi.
   "name": "veyrodta",
   "compatibility_date": "2026-09-20",
   "assets": {

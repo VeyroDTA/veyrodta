@@ -23,12 +23,12 @@ export default function Footer() {
     <footer className="bg-slate-900">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 sm:grid-cols-4 gap-10 text-sm">
         <div className="col-span-2 sm:col-span-1">
-          <div className="text-lg font-black tracking-[0.1em] text-white mb-2">VEYRO</div>
+          <div className="text-lg font-black tracking-[0.1em] text-white mb-2">UGR</div>
           <p className="text-xs text-slate-400 leading-relaxed mb-4">
             Web sitenizi değil işinizi tasarlıyoruz. Modern, hızlı ve dönüşüm odaklı web
             çözümleri.
           </p>
-          <span className="text-[11px] text-blue-400 font-semibold">Veyro DTA · Dijital Tasarım Atölyesi</span>
+          <span className="text-[11px] text-blue-400 font-semibold">UGR Studio · Web Tasarım & Dijital Çözümler</span>
         </div>
 
         <div>
@@ -60,7 +60,7 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-bold text-xs uppercase tracking-widest mb-4">İletişim</h3>
           <ul className="space-y-2.5 text-slate-400 text-xs">
-            <li className="font-semibold text-slate-300">Veyro DTA</li>
+            <li className="font-semibold text-slate-300">UGR Studio</li>
             <li>{CONTACT_ADDRESS_LINE1}</li>
             <li>{CONTACT_ADDRESS_LINE2}</li>
             <li>
@@ -81,7 +81,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-[11px] text-slate-500 pb-8 pt-6 border-t border-slate-800 mx-6">
-        © {new Date().getFullYear()} Veyro DTA. Tüm hakları saklıdır.
+        © {new Date().getFullYear()} UGR Studio. Tüm hakları saklıdır.
       </div>
       {/*
         TODO — hâlâ eksik olan alan: src/pages/Kvkk.jsx içindeki

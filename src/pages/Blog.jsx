@@ -11,7 +11,7 @@ export default function Blog() {
     <section className="max-w-6xl mx-auto px-6 py-20">
       <div className="text-center mb-14">
         <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">BİLGİ BANKASI</span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Veyro Blog</h2>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">UGR Blog</h2>
         <p className="text-slate-600 text-sm max-w-xl mx-auto">
           Web tasarım, SEO ve dijital dönüşüm üzerine, işinize doğrudan uygulayabileceğin yazılar.
         </p>

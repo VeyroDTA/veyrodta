@@ -6,11 +6,11 @@ export const sectorData = {
     messages: [
       {
         text: 'Merhaba, şirketimiz için profesyonel bir web altyapısı kurdurmak istiyoruz.',
-        time: 'Veyro Asistan - Yeni Talep',
+        time: 'UGR Asistan - Yeni Talep',
       },
       {
         text: 'Kurumsal kimlik ve SEO sürecini nasıl yönetiyorsunuz?',
-        time: 'Veyro Asistan - Yeni Talep',
+        time: 'UGR Asistan - Yeni Talep',
       },
     ],
   },
@@ -21,11 +21,11 @@ export const sectorData = {
     messages: [
       {
         text: 'Ürünlerimizi internetten satmak için e-ticaret paketiyle ilgileniyoruz.',
-        time: 'Veyro Asistan - Yeni Talep',
+        time: 'UGR Asistan - Yeni Talep',
       },
       {
         text: 'Kargo ve ödeme sistemleri entegrasyonu dahil mi?',
-        time: 'Veyro Asistan - Yeni Talep',
+        time: 'UGR Asistan - Yeni Talep',
       },
     ],
   },
@@ -36,11 +36,11 @@ export const sectorData = {
     messages: [
       {
         text: 'Danışmanlık hizmetim için müşterilerimin site üzerinden randevu almasını istiyorum.',
-        time: 'Veyro Asistan - Yeni Talep',
+        time: 'UGR Asistan - Yeni Talep',
       },
       {
         text: 'Bunun için randevu sistemini nasıl entegre edebiliriz?',
-        time: 'Veyro Asistan - Yeni Talep',
+        time: 'UGR Asistan - Yeni Talep',
       },
     ],
   },

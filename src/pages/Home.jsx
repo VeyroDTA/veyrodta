@@ -69,7 +69,7 @@ export default function Home() {
                 playsInline
                 preload="metadata"
                 className="w-full h-full object-cover"
-                aria-label="Veyro DTA tanıtım videosu"
+                aria-label="UGR Studio tanıtım videosu"
               />
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 py-24 border-t border-slate-200">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-blue-700 font-extrabold text-xs uppercase tracking-[0.2em] block mb-3">İNTERAKTİF DENEYİM</span>
-          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">Veyro DTA ile Markanızı Öne Çıkarın</h2>
+          <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4">UGR Studio ile Markanızı Öne Çıkarın</h2>
           <p className="text-slate-500 text-sm">Sol menüden hedef alanınızı seçin, müşterilerinizin size nasıl akıllıca ulaştığını canlı deneyimleyin.</p>
         </div>
 
@@ -134,7 +134,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <div className="font-black text-base mb-1">Veyro DTA Standartları</div>
+                <div className="font-black text-base mb-1">UGR Studio Standartları</div>
                 <p className="text-xs text-blue-50 leading-relaxed font-medium">
                   Tamamen size özgü tasarım, kesintisiz mobil deneyim ve profesyonel dönüşüm araçlarıyla işinizi zirveye taşıyoruz.
                 </p>

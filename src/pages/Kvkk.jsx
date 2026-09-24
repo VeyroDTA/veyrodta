@@ -19,7 +19,7 @@ export default function Kvkk() {
         <div>
           <h2 className="text-lg font-bold text-slate-900 mb-2">1. Veri Sorumlusu</h2>
           <p>
-            [Adın Soyadın] ("Veyro DTA") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu
+            [Adın Soyadın] ("UGR Studio") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu
             ("KVKK") kapsamında veri sorumlusu sıfatıyla, aşağıda açıklanan kişisel verilerinizi
             işlemekteyiz. Adres: Mimar Sinan 3. Etap, 34570 Silivri / İstanbul. Vergi Dairesi/No:
             [vergi dairesi / TC kimlik ya da vergi numaran].
@@ -67,7 +67,7 @@ export default function Kvkk() {
         <div>
           <h2 className="text-lg font-bold text-slate-900 mb-2">6. Başvuru</h2>
           <p>
-            Yukarıdaki haklarınızı kullanmak için iletisim@veyrodta.com adresine yazılı olarak
+            Yukarıdaki haklarınızı kullanmak için iletisim@ugrstudio.com.tr adresine yazılı olarak
             başvurabilirsiniz.
           </p>
         </div>

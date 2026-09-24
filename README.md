@@ -1,6 +1,6 @@
-# Veyro DTA
+# UGR Studio
 
-Veyro DTA'nın kurumsal web sitesi. React + Vite + Tailwind CSS ile geliştirildi.
+UGR Studio'nın kurumsal web sitesi. React + Vite + Tailwind CSS ile geliştirildi.
 
 ## Geliştirme
 

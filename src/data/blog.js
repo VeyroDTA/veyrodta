@@ -118,7 +118,7 @@ export const blogPosts = [
       {
         heading: 'Nasıl kurulur?',
         body: [
-          'Çoğu güncel hosting sağlayıcısı, Let\'s Encrypt gibi ücretsiz SSL sertifikalarını otomatik olarak kuruyor ve yeniliyor. Veyro DTA olarak teslim ettiğimiz her sitede SSL kurulumu standart olarak dahildir — ayrıca bir işlem yapmana gerek kalmaz.',
+          'Çoğu güncel hosting sağlayıcısı, Let\'s Encrypt gibi ücretsiz SSL sertifikalarını otomatik olarak kuruyor ve yeniliyor. UGR Studio olarak teslim ettiğimiz her sitede SSL kurulumu standart olarak dahildir — ayrıca bir işlem yapmana gerek kalmaz.',
         ],
       },
     ],
@@ -333,7 +333,7 @@ export const blogPosts = [
       {
         heading: 'React ve modern framework\'ler',
         body: [
-          'React gibi modern JavaScript kütüphaneleri, bir sitenin arayüzünü küçük, yeniden kullanılabilir parçalara (bileşenlere) bölerek geliştirmeyi hem hızlandırır hem de kod kalitesini artırır. Biz de Veyro DTA olarak sitelerimizi bu yaklaşımla kuruyoruz — bu sayede yeni bir sayfa ya da özellik eklemek, sıfırdan başlamaktan çok daha hızlı ve güvenli oluyor.',
+          'React gibi modern JavaScript kütüphaneleri, bir sitenin arayüzünü küçük, yeniden kullanılabilir parçalara (bileşenlere) bölerek geliştirmeyi hem hızlandırır hem de kod kalitesini artırır. Biz de UGR Studio olarak sitelerimizi bu yaklaşımla kuruyoruz — bu sayede yeni bir sayfa ya da özellik eklemek, sıfırdan başlamaktan çok daha hızlı ve güvenli oluyor.',
         ],
       },
       {

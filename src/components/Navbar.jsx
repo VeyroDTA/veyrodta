@@ -22,16 +22,16 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-3.5 group text-left cursor-pointer">
           <img
             src="/logo-icon.png"
-            alt="Veyro DTA"
+            alt="UGR Studio"
             className="w-10 h-10 object-contain group-hover:scale-110 transition-transform flex-shrink-0"
           />
           <div className="flex flex-col justify-center">
             <div className="text-xl font-black tracking-[0.15em] text-slate-900 leading-none">
-              VEYRO
+              UGR
             </div>
             <div className="flex items-center gap-1.5 mt-1.5">
               <div className="h-[1px] w-6 bg-gradient-to-r from-transparent to-blue-600"></div>
-              <span className="text-blue-700 font-bold text-xs tracking-widest leading-none">D T A</span>
+              <span className="text-blue-700 font-bold text-xs tracking-widest leading-none">STUDIO</span>
               <div className="h-[1px] w-6 bg-gradient-to-l from-transparent to-blue-600"></div>
             </div>
           </div>

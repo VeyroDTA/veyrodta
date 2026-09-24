@@ -7,19 +7,19 @@
 export const WHATSAPP_NUMBER = '905394500402';
 
 export const WHATSAPP_MESSAGE =
-  'Merhaba, Veyro DTA web tasarım hizmetleriniz hakkında bilgi almak istiyorum.';
+  'Merhaba, UGR Studio web tasarım hizmetleriniz hakkında bilgi almak istiyorum.';
 
 // 2) İletişim formunun gönderileceği adres.
 export const FORM_ENDPOINT = 'https://formspree.io/f/xjykklyo';
 
 // 3) Site yayına girince gerçek alan adını buraya yaz (SEO/OG etiketleri için kullanılır)
-export const SITE_URL = 'https://www.veyrodta.com'; // TODO: gerçek domainin
+export const SITE_URL = 'https://www.ugrstudio.com.tr'; // TODO: gerçek domainin
 
 // 4) Google Analytics 4 ölçüm kimliği (aşağıdaki "Analytics" bölümüne bak)
 export const GA_MEASUREMENT_ID = 'G-REY1DWBF4C';
 
 // 5) Footer'da görünen iletişim bilgileri
-export const CONTACT_EMAIL = 'iletisim@veyrodta.com';
+export const CONTACT_EMAIL = 'iletisim@ugrstudio.com.tr';
 export const CONTACT_ADDRESS_LINE1 = 'Mimar Sinan 3. Etap';
 export const CONTACT_ADDRESS_LINE2 = '34570 Silivri / İstanbul';
 export const WORKING_HOURS = 'Hafta içi 09:00 - 18:00'; // TODO: gerçek çalışma saatlerine göre düzenle

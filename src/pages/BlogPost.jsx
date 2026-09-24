@@ -12,9 +12,9 @@ export default function BlogPost() {
   // sabit değerleri kullanır. Blog gerçekten SEO odaklı büyüyecekse ileride bu projeyi
   // Astro/Next gibi statik üretim yapan bir yapıya taşımak en doğrusu olur.
   useEffect(() => {
-    if (post) document.title = `${post.title} | Veyro Blog`;
+    if (post) document.title = `${post.title} | UGR Blog`;
     return () => {
-      document.title = 'Veyro DTA | Kurumsal Web Tasarım & Dijital Çözümler';
+      document.title = 'UGR Studio | Kurumsal Web Tasarım & Dijital Çözümler';
     };
   }, [post]);
 

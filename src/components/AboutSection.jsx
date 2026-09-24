@@ -13,13 +13,13 @@ export default function AboutSection() {
           {/*
             TODO: Gerçek fotoğrafını /public/founder.jpg olarak eklediğinde
             aşağıdaki div'i şu satırla değiştir:
-            <img src="/founder.jpg" alt="Veyro DTA kurucusu" className="w-32 h-32 rounded-2xl object-cover" />
+            <img src="/founder.jpg" alt="UGR Studio kurucusu" className="w-32 h-32 rounded-2xl object-cover" />
           */}
           <div className="w-32 h-32 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-5xl font-black text-blue-700 mb-5">
             V
           </div>
           <h3 className="text-lg font-bold text-slate-900">Kurucu</h3>
-          <p className="text-sm text-blue-700 font-semibold mb-6">Veyro DTA</p>
+          <p className="text-sm text-blue-700 font-semibold mb-6">UGR Studio</p>
 
           <div className="grid grid-cols-2 gap-4 w-full">
             {stats.map((s) => (
@@ -38,7 +38,7 @@ export default function AboutSection() {
           </h2>
           <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
             <p>
-              Veyro DTA, arkasında büyük bir ajans ekibi değil; yazılım ve web geliştirme alanında
+              UGR Studio, arkasında büyük bir ajans ekibi değil; yazılım ve web geliştirme alanında
               5 yıllık deneyime sahip, işini titizlikle yapan bağımsız bir geliştirici tarafından
               yürütülüyor.
             </p>

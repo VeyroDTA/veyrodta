@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.veyrodta.com/sitemap.xml
+Sitemap: https://www.ugrstudio.com.tr/sitemap.xml

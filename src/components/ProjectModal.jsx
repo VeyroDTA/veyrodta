@@ -68,7 +68,7 @@ export default function ProjectModal({ project, onClose }) {
           </div>
 
           <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200">
-            <span className="text-blue-700 font-bold tracking-wide text-base block mb-1">Veyro Çözümü:</span>
+            <span className="text-blue-700 font-bold tracking-wide text-base block mb-1">UGR Çözümü:</span>
             <span className="text-slate-600 leading-relaxed font-medium block">{project.solution}</span>
           </div>
 
