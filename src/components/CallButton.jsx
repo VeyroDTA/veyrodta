@@ -1,6 +1,18 @@
+import { useState, useEffect } from 'react';
 import { phoneHref } from '../config';
 
 export default function CallButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 350);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  if (!visible) return null;
+
   return (
     <a
       href={phoneHref()}

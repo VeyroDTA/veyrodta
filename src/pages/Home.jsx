@@ -29,7 +29,19 @@ export default function Home() {
 
   return (
     <div>
-      <section className="max-w-7xl mx-auto px-6 pt-10 pb-16 flex flex-col lg:flex-row items-center justify-between gap-12">
+      <section className="relative overflow-hidden max-w-7xl mx-auto px-6 pt-10 pb-16 flex flex-col lg:flex-row items-center justify-between gap-12">
+        {/* Dekoratif arka plan: nokta deseni + yumuşak renk lekeleri - düz beyazlığı kırmak için */}
+        <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+          <svg className="absolute inset-0 w-full h-full opacity-[0.35]">
+            <pattern id="heroDots" width="28" height="28" patternUnits="userSpaceOnUse">
+              <circle cx="1.5" cy="1.5" r="1.5" fill="#CBD5E1" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#heroDots)" />
+          </svg>
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute top-40 -left-32 w-80 h-80 bg-amber-100 rounded-full blur-3xl opacity-40"></div>
+        </div>
+
         <div className="max-w-2xl">
           <div className="inline-flex items-center space-x-2.5 bg-blue-50 border border-blue-100 px-5 py-2.5 rounded-full text-blue-700 text-xs font-bold mb-6">
             <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-ping"></span>
@@ -83,7 +95,7 @@ export default function Home() {
           <p className="text-slate-500 text-sm">Sol menüden hedef alanınızı seçin, müşterilerinizin size nasıl akıllıca ulaştığını canlı deneyimleyin.</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 bg-slate-50 border border-slate-200 p-8 sm:p-12 rounded-[32px]">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 p-8 sm:p-12 rounded-[32px] shadow-2xl">
           <div className="w-full lg:w-1/2 space-y-4">
             {sectorKeys.map((key) => {
               const sector = sectorData[key];

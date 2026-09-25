@@ -1,7 +1,19 @@
+import { useState, useEffect } from 'react';
 import { whatsappHref } from '../config';
 import { trackEvent } from '../analytics';
 
 export default function WhatsAppButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 350);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  if (!visible) return null;
+
   return (
     <a
       href={whatsappHref()}
