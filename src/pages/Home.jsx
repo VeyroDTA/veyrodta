@@ -54,7 +54,7 @@ export default function Home() {
           <p className="text-lg text-slate-600 mb-8 leading-relaxed max-w-xl font-normal">
             Markanızın gücünü dijitale taşıyor, güçlü bir tasarım ve kullanıcı deneyimiyle ziyaretçilerinizi müşterilerinize dönüştürüyoruz.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 mb-8">
             <Link
               to="/fiyatlar"
               className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-900 font-extrabold px-8 py-4 rounded-xl shadow-md shadow-amber-500/20 hover:scale-105 transition-all cursor-pointer"
@@ -62,9 +62,27 @@ export default function Home() {
               Paketleri ve Fiyatları İncele →
             </Link>
           </div>
+
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold text-slate-500">
+            <span className="inline-flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Şeffaf Fiyat
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+              2-4 Hafta Teslim
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+              Yayın Sonrası Destek
+            </span>
+          </div>
         </div>
-        <div className="w-full lg:w-[520px]">
-          <div className="bg-white border border-slate-200 rounded-3xl p-4 shadow-lg">
+        <div className="w-full lg:w-[520px] relative">
+          {/* Video kutusunun arkasinda yumusak renkli isik - duzlugu kirmak icin */}
+          <div className="absolute -inset-6 bg-gradient-to-br from-blue-200 via-blue-100 to-amber-100 rounded-[40px] blur-2xl opacity-60 -z-10"></div>
+
+          <div className="bg-white border border-slate-200 rounded-3xl p-4 shadow-xl">
             <div className="bg-slate-100 rounded-2xl overflow-hidden border border-slate-200 aspect-video flex items-center justify-center">
               {/*
                 Not: Bu 30 saniyelik gerçek bir tanıtım filmi. 30 saniyelik bir video
@@ -83,6 +101,31 @@ export default function Home() {
                 className="w-full h-full object-cover"
                 aria-label="UGR Studio tanıtım videosu"
               />
+            </div>
+          </div>
+
+          {/* Yuzen kanit kartlari - sag ustte deneyim, sol altta ozguluk vurgusu */}
+          <div className="hidden sm:flex absolute -top-6 -right-6 items-center gap-3 bg-white border border-slate-200 rounded-2xl shadow-lg px-4 py-3">
+            <div className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 flex-shrink-0">
+              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-sm font-black text-slate-900 leading-none">05+ Yıl</div>
+              <div className="text-[10px] text-slate-500 font-medium mt-0.5">Deneyim</div>
+            </div>
+          </div>
+
+          <div className="hidden sm:flex absolute -bottom-6 -left-6 items-center gap-3 bg-white border border-slate-200 rounded-2xl shadow-lg px-4 py-3">
+            <div className="w-9 h-9 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600 flex-shrink-0">
+              <svg className="w-5 h-5 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <div className="text-sm font-black text-slate-900 leading-none">%100</div>
+              <div className="text-[10px] text-slate-500 font-medium mt-0.5">Özgün Tasarım</div>
             </div>
           </div>
         </div>

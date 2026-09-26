@@ -73,7 +73,8 @@ const addons = [
 
 export default function Pricing() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
+    <section className="relative max-w-7xl mx-auto px-6 py-20 overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-70 -z-10" aria-hidden="true"></div>
       <div className="text-center max-w-2xl mx-auto mb-16">
         <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">ŞEFFAF FİYATLANDIRMA</span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">İhtiyacınıza Uygun Paketi Seçin</h2>
@@ -89,7 +90,7 @@ export default function Pricing() {
             key={pkg.name}
             className={
               pkg.highlight
-                ? 'bg-amber-50 border-2 border-amber-400 rounded-2xl p-6 flex flex-col justify-between relative shadow-md'
+                ? 'bg-gradient-to-b from-amber-50 to-white border-2 border-amber-400 rounded-2xl p-6 flex flex-col justify-between relative shadow-xl lg:scale-105 lg:-translate-y-2 z-10'
                 : 'bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm'
             }
           >
