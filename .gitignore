@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Geçici önizleme dosyasý (üretime dahil edilmez)
+__onizleme.html

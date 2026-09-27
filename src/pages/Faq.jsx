@@ -1,57 +1,59 @@
-import { useState, useEffect } from 'react';
-import { faqs } from '../data/faqs';
+import { useEffect } from "react";
+import Seo from "../components/Seo";
+import PageHero from "../components/PageHero";
+import FaqAccordion from "../components/FaqAccordion";
+import ContactBlock from "../components/ContactBlock";
+import { Section, SrHeading } from "../components/Section";
+import { faqs } from "../data/faqs";
 
 export default function Faq() {
-  const [openFaq, setOpenFaq] = useState(null);
-
-  // FAQPage schema.org verisi: Google'ın SSS'ni arama sonucunda
-  // doğrudan (açılır kapanır liste olarak) göstermesini sağlar.
+  // Google'ın arama sonuçlarında SSS'yi açılır-kapanır liste olarak göstermesi
+  // için schema.org FAQPage verisi. Metinler src/data/faqs.js'ten gelir.
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.dataset.faqSchema = "true";
     script.text = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
       mainEntity: faqs.map((f) => ({
-        '@type': 'Question',
+        "@type": "Question",
         name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a },
+        acceptedAnswer: { "@type": "Answer", text: f.a },
       })),
     });
     document.head.appendChild(script);
-    return () => document.head.removeChild(script);
+
+    return () => {
+      document.querySelectorAll('script[data-faq-schema="true"]').forEach((s) => s.remove());
+    };
   }, []);
 
   return (
-    <section className="max-w-4xl mx-auto px-6 py-20">
-      <div className="text-center mb-16">
-        <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">MERAK EDİLENLER</span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Sık Sorulan Sorular</h2>
-      </div>
-      <div className="space-y-4">
-        {faqs.map((faq, index) => {
-          const isOpen = openFaq === index;
-          const panelId = `faq-panel-${index}`;
-          return (
-            <div key={index} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-              <button
-                onClick={() => setOpenFaq(isOpen ? null : index)}
-                className="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center cursor-pointer"
-                aria-expanded={isOpen}
-                aria-controls={panelId}
-              >
-                <span>{faq.q}</span>
-                <span className="text-blue-700 text-xl" aria-hidden="true">{isOpen ? '-' : '+'}</span>
-              </button>
-              {isOpen && (
-                <div id={panelId} className="px-6 pb-5 text-sm text-slate-600 border-t border-slate-200 pt-4 leading-relaxed">
-                  {faq.a}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </section>
+    <>
+      <Seo
+        title="Sıkça Sorulan Sorular | Web Tasarım SSS — UGR Studio"
+        description="Web sitesi hazırlama süresi, fiyatlandırma, domain ve hosting, mobil uyumluluk, SEO, revizyon hakkı ve e-ticaret hakkında sık sorulan sorular."
+        path="/sss"
+      />
+
+      <main id="main">
+        <PageHero
+          eyebrow="S.S.S."
+          title="Sıkça Sorulan"
+          highlight="Sorular"
+          description="Web sitesi yaptırma sürecinde en çok merak edilenler, kısa ve net cevaplarla."
+        />
+
+        <Section>
+          <SrHeading>Tüm Sorular</SrHeading>
+          <div className="mx-auto max-w-3xl">
+            <FaqAccordion withCta />
+          </div>
+        </Section>
+
+        <ContactBlock />
+      </main>
+    </>
   );
 }

@@ -1,82 +1,131 @@
-import { Link } from 'react-router-dom';
-import { blogPosts } from '../data/blog';
-import BlogTopicIcon from '../components/BlogTopicIcon';
-import BlogCardCover from '../components/BlogCardCover';
+import { Link } from "react-router-dom";
+import { blogPosts } from "../data/blog";
+import BlogTopicIcon from "../components/BlogTopicIcon";
+import BlogCardCover from "../components/BlogCardCover";
+import Seo from "../components/Seo";
+import PageHero from "../components/PageHero";
+import Reveal from "../components/Reveal";
+import Icon from "../components/Icon";
+import { Container } from "../components/Section";
+
+// ─────────────────────────────────────────────
+// BLOG ANA SAYFASI
+// Blog üst menüde yer almıyor; içeriklere footer'daki "Kaynaklar"
+// başlığı altından ulaşılır.
+// ─────────────────────────────────────────────
 
 export default function Blog() {
   const pillarPost = blogPosts.find((p) => p.pillar);
   const articles = blogPosts.filter((p) => !p.pillar);
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
-      <div className="text-center mb-14">
-        <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">BİLGİ BANKASI</span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">UGR Blog</h2>
-        <p className="text-slate-600 text-sm max-w-xl mx-auto">
-          Web tasarım, SEO ve dijital dönüşüm üzerine, işinize doğrudan uygulayabileceğin yazılar.
-        </p>
-      </div>
+    <>
+      <Seo
+        title="Blog | Web Tasarım, SEO ve Dijital Dönüşüm | UGR Studio"
+        description="UGR Studio blog: web tasarım, SEO altyapısı, e-ticaret ve dijital dönüşüm üzerine uygulanabilir rehberler."
+        path="/blog"
+      />
 
-      {pillarPost && (
-        <Link
-          to={`/blog/${pillarPost.slug}`}
-          className="group block mb-10 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center">
-            {pillarPost.image && (
-              <div className="relative sm:w-2/5 aspect-video overflow-hidden flex-shrink-0">
-                <img
-                  src={pillarPost.image}
-                  alt={pillarPost.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-3 left-3">
-                  <BlogTopicIcon icon={pillarPost.icon} className="w-11 h-11" />
+      <main id="main">
+        <PageHero
+          eyebrow="BİLGİ BANKASI"
+          title="Web Tasarım ve Dijital"
+          highlight="Dönüşüm"
+          description="Web tasarım, SEO altyapısı ve dijital dönüşüm üzerine; işinizde doğrudan uygulayabileceğiniz yazılar."
+        />
+
+        <Container className="py-12 sm:py-16">
+          {pillarPost && (
+            <Reveal className="mb-10">
+              <Link
+                to={`/blog/${pillarPost.slug}`}
+                className="group grid overflow-hidden rounded-3xl border border-line bg-white transition-colors duration-200 hover:border-ugr-200 sm:grid-cols-5"
+              >
+                <div className="relative aspect-video overflow-hidden sm:col-span-2 sm:aspect-auto">
+                  {pillarPost.image ? (
+                    <img
+                      src={pillarPost.image}
+                      alt={pillarPost.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <BlogCardCover icon={pillarPost.icon} index={0} />
+                  )}
+                  <div className="absolute top-3 left-3">
+                    <BlogTopicIcon icon={pillarPost.icon} className="h-10 w-10" />
+                  </div>
                 </div>
-              </div>
-            )}
-            <div className="p-8 sm:p-10">
-              <span className="inline-block bg-white/15 text-white text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-                {pillarPost.category}
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-black text-white mb-3 leading-tight">{pillarPost.title}</h3>
-              <p className="text-blue-50/90 text-sm mb-5 max-w-2xl">{pillarPost.excerpt}</p>
-              <span className="inline-flex items-center gap-1.5 text-white font-bold text-sm group-hover:gap-2.5 transition-all">
-                Yazıyı Oku <span aria-hidden="true">→</span>
-              </span>
-            </div>
+
+                <div className="p-6 sm:col-span-3 sm:p-9">
+                  <span className="inline-flex rounded-full bg-ugr-50 px-3 py-1 text-[11px] font-extrabold tracking-[0.14em] text-ugr-600 uppercase">
+                    {pillarPost.category}
+                  </span>
+                  <h2 className="mt-3.5 text-[18px] leading-snug font-extrabold text-navy-800 sm:text-[21px]">
+                    {pillarPost.title}
+                  </h2>
+                  <p className="mt-3 text-[14px] leading-relaxed text-muted">
+                    {pillarPost.excerpt}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-extrabold text-ugr-600">
+                    Yazıyı Oku
+                    <Icon
+                      name="arrowRight"
+                      className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
+              </Link>
+            </Reveal>
+          )}
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {articles.map((post, index) => (
+              <Reveal key={post.slug} delay={index * 60} className="h-full">
+                <Link
+                  to={`/blog/${post.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-white transition-colors duration-200 hover:border-ugr-200"
+                >
+                  <div className="aspect-video overflow-hidden">
+                    {post.image ? (
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <BlogCardCover icon={post.icon} index={index} />
+                    )}
+                  </div>
+
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="mb-3 flex items-center gap-2">
+                      <span className="text-[11px] font-extrabold tracking-[0.12em] text-ugr-600 uppercase">
+                        {post.category}
+                      </span>
+                      <span className="text-[11px] text-navy-400">· {post.readTime}</span>
+                    </div>
+                    <h3 className="text-[16px] leading-snug font-extrabold text-navy-800">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2.5 text-[13.5px] leading-relaxed text-muted">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-extrabold text-ugr-600">
+                      Yazıyı Oku
+                      <Icon
+                        name="arrowRight"
+                        className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"
+                      />
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
           </div>
-        </Link>
-      )}
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map((post, index) => (
-          <Link
-            key={post.slug}
-            to={`/blog/${post.slug}`}
-            className="group bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:border-blue-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-          >
-            <div className="aspect-video overflow-hidden">
-              <div className="w-full h-full transition-transform duration-500 group-hover:scale-105">
-                <BlogCardCover icon={post.icon} index={index} />
-              </div>
-            </div>
-            <div className="p-7 flex flex-col justify-between flex-1">
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-blue-700 font-bold text-[11px] uppercase tracking-widest">{post.category}</span>
-                  <span className="text-slate-400 text-[11px]">· {post.readTime}</span>
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3 leading-snug">{post.title}</h3>
-                <p className="text-sm text-slate-500 mb-5 leading-relaxed">{post.excerpt}</p>
-              </div>
-              <span className="inline-flex items-center gap-1.5 text-blue-700 font-bold text-sm group-hover:gap-2.5 transition-all">
-                Yazıyı Oku <span aria-hidden="true">→</span>
-              </span>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
+        </Container>
+      </main>
+    </>
   );
 }

@@ -1,77 +1,153 @@
+import LegalPage, { LegalSection } from "../components/LegalPage";
+import {
+  CONTACT_ADDRESS_LINE1,
+  CONTACT_ADDRESS_LINE2,
+  CONTACT_EMAIL,
+  LEGAL_CONTROLLER_NAME,
+  LEGAL_CONTROLLER_TAX,
+  SITE_URL,
+} from "../config";
+
 export default function Kvkk() {
   return (
-    <section className="max-w-3xl mx-auto px-6 py-20 text-slate-600 text-sm leading-relaxed">
-      <div className="text-center mb-14">
-        <span className="text-blue-700 font-bold text-xs uppercase tracking-widest block mb-2">YASAL</span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">KVKK Aydınlatma Metni</h1>
-      </div>
+    <LegalPage
+      seoTitle="KVKK Aydınlatma Metni | UGR Studio"
+      seoDescription="6698 sayılı KVKK kapsamında UGR Studio tarafından işlenen kişisel veriler hakkında aydınlatma metni."
+      path="/kvkk"
+      title="KVKK Aydınlatma Metni"
+      intro="Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında veri sorumlusu sıfatıyla faaliyet gösteren UGR Studio tarafından, web sitesi üzerinden paylaştığınız kişisel verilerin nasıl işlendiğini açıklamak amacıyla hazırlanmıştır."
+    >
+      <LegalSection heading="1. Veri Sorumlusu">
+        <p>
+          {LEGAL_CONTROLLER_NAME} (&quot;UGR Studio&quot;) olarak, 6698 sayılı KVKK kapsamında
+          veri sorumlusu sıfatıyla aşağıda açıklanan kişisel verileri işlemekteyiz.
+        </p>
+        <p>
+          <strong className="font-bold text-navy-700">Adres:</strong> {CONTACT_ADDRESS_LINE1},{" "}
+          {CONTACT_ADDRESS_LINE2}
+        </p>
+        <p>
+          <strong className="font-bold text-navy-700">Vergi Dairesi / No:</strong>{" "}
+          {LEGAL_CONTROLLER_TAX}
+        </p>
+        <p>
+          <strong className="font-bold text-navy-700">E-posta:</strong>{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="font-bold text-ugr-600 underline underline-offset-2">
+            {CONTACT_EMAIL}
+          </a>
+        </p>
+      </LegalSection>
 
-      {/*
-        DİKKAT — BU BİR ŞABLONDUR, AVUKAT ONAYI YERİNE GEÇMEZ.
-        Şahıs firması olduğun için "veri sorumlusu" alanına şirket unvanı değil,
-        kendi adın soyadın (bağlı olduğun vergi dairesi/no ile) yazılır. Köşeli
-        parantez içindeki [ ... ] alanları doldur. İdeal olanı, son halini bir
-        hukuk danışmanına kontrol ettirmen; 6698 sayılı KVKK'ya göre veri
-        sorumlusunun kimliği ve işleme amaçları eksiksiz ve doğru olmalı.
-      */}
+      <LegalSection heading="2. İşlenen Kişisel Veriler">
+        <p>
+          Bize e-posta, WhatsApp ya da telefon aracılığıyla ulaştığınızda aşağıdaki
+          kişisel verileriniz işlenmektedir:
+        </p>
+        <ul className="ml-4 list-disc space-y-1.5">
+          <li>Ad, soyad</li>
+          <li>Firma adı</li>
+          <li>Telefon numarası</li>
+          <li>E-posta adresi</li>
+          <li>Mevcut web sitesi adresi (varsa)</li>
+          <li>Proje türü ve bütçe aralığı tercihiniz</li>
+          <li>Projenize ilişkin olarak ilettiğiniz açıklama ve talepler</li>
+        </ul>
+        <p>
+          Ayrıca sitemizi ziyaretiniz sırasında sunucu günlükleri (IP adresi, tarayıcı ve
+          cihaz bilgisi, ziyaret zamanı) aracılığıyla otomatik olarak toplanabilir.
+        </p>
+      </LegalSection>
 
-      <div className="space-y-8">
-        <div>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">1. Veri Sorumlusu</h2>
-          <p>
-            [Adın Soyadın] ("UGR Studio") olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu
-            ("KVKK") kapsamında veri sorumlusu sıfatıyla, aşağıda açıklanan kişisel verilerinizi
-            işlemekteyiz. Adres: Mimar Sinan 3. Etap, 34570 Silivri / İstanbul. Vergi Dairesi/No:
-            [vergi dairesi / TC kimlik ya da vergi numaran].
-          </p>
-        </div>
+      <LegalSection heading="3. Kişisel Verilerin İşlenme Amaçları">
+        <ul className="ml-4 list-disc space-y-1.5">
+          <li>Talebinize karşılık teklif hazırlanması ve sunulması</li>
+          <li>Size projenize özel kapsam, süre ve fiyat bilgisinin iletilmesi</li>
+          <li>Sözleşme süreçlerinin yürütülmesi ve mevzuattan doğan yükümlülüklerin yerine getirilmesi</li>
+          <li>Hizmet kalitemizin ölçülmesi ve iyileştirilmesi</li>
+          <li>Yasal yükümlülüklerimizin yerine getirilmesi</li>
+        </ul>
+      </LegalSection>
 
-        <div>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">2. İşlenen Kişisel Veriler</h2>
-          <p>
-            İletişim formumuzu doldurduğunuzda ad-soyad, e-posta adresi, telefon numarası ve
-            bize ilettiğiniz proje detaylarına ilişkin kişisel verileriniz işlenmektedir.
-          </p>
-        </div>
+      <LegalSection heading="4. Hukuki Sebep ve İşleme Şartı">
+        <p>
+          Kişisel verileriniz; KVKK&apos;ın 5. maddesinde yer alan &quot;bir sözleşmenin kurulması
+          veya ifasıyla doğrudan doğruya ilgili olması&quot; ve &quot;hukuki yükümlülüğün
+          yerine getirilmesi&quot; hukuki sebeplerine dayanılarak işlenmektedir. Teklif
+          talebiniz için verileri açık rızanız olmadan işliyor olabiliriz; bu durumda
+          kanundaki istisna halleri uygulanır.
+        </p>
+      </LegalSection>
 
-        <div>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">3. İşleme Amacı</h2>
-          <p>
-            Kişisel verileriniz; tarafınıza teklif sunulması, talebinizin değerlendirilmesi,
-            sizinle iletişime geçilmesi ve mevzuattan doğan yükümlülüklerin yerine getirilmesi
-            amacıyla işlenmektedir.
-          </p>
-        </div>
+      <LegalSection heading="5. Aktarım ve Yurt Dışı Aktarımı">
+        <p>
+          Sitede teklif formu bulunmadığından iletişim talepleriniz doğrudan e-posta,
+          WhatsApp ya da telefon üzerinden bize iletilir. Bu kanalların hiçbiri
+          üçüncü taraf bir form hizmeti üzerinden çalışmaz. Buna karşılık erişim
+          analizi için Google Analytics (Google LLC) ile ve iletişim hizmetleri
+          kapsamında tedarikçilerimizle veri paylaşımı yapılabilir. Verileriniz, hizmetin
+          ifası için gerekli olduğu ölçüde üçüncü kişilerle paylaşılır.
+        </p>
+        <p>
+          Yurt dışına veri aktarımı söz konusu olduğunda KVKK&apos;ın 9. maddesi uyarınca
+          yeterli tedbirler alınmakta, uygun güvence esasları (standart sözleşme, açık rıza
+          vb.) değerlendirilmektedir. İlgili hizmet sağlayıcıların bir kısmı yurt dışında
+          bulunduğundan bu madde kapsamında aktarım gerçekleşebilir.
+        </p>
+      </LegalSection>
 
-        <div>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">4. Kişisel Verilerin Aktarılması</h2>
-          <p>
-            Verileriniz, form gönderiminin teknik altyapısını sağlayan hizmet sağlayıcımız
-            (Formspree) ve yalnızca hizmetin ifası için gerekli olduğu ölçüde ilgili tedarikçilerimiz
-            dışında üçüncü kişilerle paylaşılmaz, yurt dışına aktarılması hâlinde KVKK'nın aradığı
-            şartlar sağlanır.
-          </p>
-        </div>
+      <LegalSection heading="6. Saklama Süresi">
+        <p>
+          Kişisel verileriniz, işleme amacının ortadan kalkması ve ilgili mevzuatta öngörülen
+          saklama süresi dolmaya kadar muhafaza edilir. Teklif talepleri için veriler,
+          talebin sonuçlanmasını takiben makul bir süre boyunca saklanır; bu süre içinde
+          talebinize geri dönmek isterseniz verilerinize erişebilirsiniz.
+        </p>
+      </LegalSection>
 
-        <div>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">5. Haklarınız</h2>
-          <p>
-            KVKK'nın 11. maddesi uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme,
-            işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp
-            kullanılmadığını öğrenme, yurt içinde/yurt dışında aktarıldığı üçüncü kişileri bilme,
-            eksik/yanlış işlenmişse düzeltilmesini isteme, silinmesini/yok edilmesini isteme ve
-            bu işlemlerin aktarıldığı üçüncü kişilere bildirilmesini isteme haklarına sahipsiniz.
-          </p>
-        </div>
+      <LegalSection heading="7. Güvenlik ve Veri Sorumluluğu">
+        <p>
+          Kişisel verilerinizin hukuka aykırı olarak işlenmesini önlemek, veri güvenliğini
+          sağlamak ve verilere yetkisiz erişimi engellemek için gerekli her türlü teknik ve
+          idari tedbiri almaktayız. E-posta yoluyla iletilen talepler SSL/TLS şifreli
+          bağlantı üzerinden tarafımıza ulaşır.
+        </p>
+      </LegalSection>
 
-        <div>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">6. Başvuru</h2>
-          <p>
-            Yukarıdaki haklarınızı kullanmak için iletisim@ugrstudio.com.tr adresine yazılı olarak
-            başvurabilirsiniz.
-          </p>
-        </div>
-      </div>
-    </section>
+      <LegalSection heading="8. Haklarınız">
+        <p>
+          KVKK&apos;ın 11. maddesi uyarınca; verilerinizin işlenip işlenmediğini öğrenme,
+          işlenmişse bilgi talep etme, işleme amacını öğrenme, verilerin üçüncü kişilere
+          aktarılıp aktarılmadığını bilme, eksik veya yanlış işlenmiş verilerin
+          düzeltilmesini veya silinmesini isteme, işlemenin sınırlandırılmasını isteme,
+          verilerinizin aktarıldığı üçüncü kişileri bilme ve verileriniz üzerinde kanunla
+          tanınan diğer haklara sahipsiniz.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="9. Başvuru Yöntemi">
+        <p>
+          Haklarınızı kullanmak istediğinizde{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="font-bold text-ugr-600 underline underline-offset-2">
+            {CONTACT_EMAIL}
+          </a>{" "}
+          adresine yazılı olarak başvurabilir ya da tarafımıza posta yoluyla ulaşabilirsiniz.
+          Başvurunuz en geç 30 gün içinde sonuçlandırılır.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="10. Değişiklikler">
+        <p>
+          Bu aydınlatma metni, mevzuat değişiklikleri veya hizmetlerimizdeki
+          değişiklikler doğrultusunda güncellenebilir. Güncel metin bu sayfada
+          yayımlanmaktadır.
+        </p>
+        <p>
+          Site adresi:{" "}
+          <a href={SITE_URL} className="font-bold text-ugr-600 underline underline-offset-2">
+            {SITE_URL}
+          </a>
+        </p>
+      </LegalSection>
+    </LegalPage>
   );
 }

@@ -1,97 +1,189 @@
-import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { NAV_ITEMS, whatsappHref } from "../config";
+import { trackEvent } from "../analytics";
+import Logo from "./Logo";
+import Icon from "./Icon";
+import { Container } from "./Section";
 
-const NAV_ITEMS = [
-  { to: '/', label: 'Anasayfa' },
-  { to: '/fiyatlar', label: 'Fiyatlar' },
-  { to: '/projelerimiz', label: 'Projelerimiz' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/sss', label: 'SSS' },
-  { to: '/iletisim', label: 'İletişim' },
-];
-
-const linkClass = ({ isActive }) =>
-  `hover:text-blue-700 transition-colors cursor-pointer ${isActive ? 'text-blue-700' : ''}`;
+// ─────────────────────────────────────────────
+// HEADER
+// · Sticky, kısa ve sade (yükseklik 72px)
+// · Sayfa aşağı kaydırıldığında hafif gölge + blur belirir
+// · Mobilde hamburger menü, açılışta kademeli animasyon
+// ─────────────────────────────────────────────
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  // Scroll gölgesi
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Mobil menü açık/kapalı durumu.
+  // Rota değişince menüyü kapatmak için effect içinde setState çağırmak yerine
+  // render sırasında "değişen değeri sıfırla" deseni kullanılır — React'in
+  // önerdiği yaklaşım ve gereksiz bir ek render turunu da önler.
+  const [open, setOpen] = useState(false);
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setOpen(false);
+  }
+
+  // Mobil menü açıkken arka planın kaymasını engelle
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
+
+  // Esc ile menüyü kapat
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const navLinkClass = ({ isActive }) =>
+    `relative py-1.5 text-[13.5px] font-bold transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:rounded-full after:bg-ugr-500 after:transition-all ${
+      isActive
+        ? "text-ugr-600 after:w-full"
+        : "text-navy-600 after:w-0 hover:text-ugr-600 hover:after:w-full"
+    }`;
 
   return (
     <>
-      <header className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between sticky top-0 bg-white/90 backdrop-blur-xl z-40 border-b border-slate-200">
-        <Link to="/" className="flex items-center gap-3.5 group text-left cursor-pointer">
-          <img
-            src="/logo-icon.png"
-            alt="UGR Studio"
-            className="w-10 h-10 object-contain group-hover:scale-110 transition-transform flex-shrink-0"
-          />
-          <div className="flex flex-col justify-center">
-            <div className="text-xl font-black tracking-[0.15em] text-slate-900 leading-none">
-              UGR
-            </div>
-            <div className="flex items-center gap-1.5 mt-1.5">
-              <div className="h-[1px] w-6 bg-gradient-to-r from-transparent to-blue-600"></div>
-              <span className="text-blue-700 font-bold text-xs tracking-widest leading-none">STUDIO</span>
-              <div className="h-[1px] w-6 bg-gradient-to-l from-transparent to-blue-600"></div>
-            </div>
-          </div>
-        </Link>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] focus:rounded-xl focus:bg-navy-800 focus:px-4 focus:py-2 focus:text-sm focus:font-bold focus:text-white"
+      >
+        İçeriğe geç
+      </a>
 
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-          {NAV_ITEMS.map((item) => (
-            <NavLink key={item.to} to={item.to} end={item.to === '/'} className={linkClass}>
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="hidden md:block">
+      <header
+        className={`sticky top-0 z-50 border-b bg-white/85 backdrop-blur-xl transition-shadow duration-300 ${
+          scrolled ? "border-line shadow-[0_6px_24px_-14px_rgba(15,23,42,0.4)]" : "border-transparent"
+        }`}
+      >
+        <Container className="flex h-[4.5rem] items-center justify-between gap-4">
+          {/* Logo */}
           <Link
-            to="/iletisim"
-            className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-900 text-sm font-extrabold px-7 py-3.5 rounded-xl transition-all shadow-md shadow-amber-500/20 hover:scale-105 cursor-pointer"
+            to="/"
+            className="rounded-xl py-1 transition-opacity hover:opacity-80"
           >
-            Ücretsiz Teklif Al →
+            <Logo />
           </Link>
-        </div>
 
-        <button
-          onClick={() => setMobileMenuOpen((open) => !open)}
-          className="md:hidden text-slate-900 p-2"
-          aria-label={mobileMenuOpen ? 'Menüyü kapat' : 'Menüyü aç'}
-          aria-expanded={mobileMenuOpen}
-        >
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            {mobileMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
-      </header>
+          {/* Masaüstü menü */}
+          <nav aria-label="Ana menü" className="hidden lg:flex items-center gap-6">
+            {NAV_ITEMS.map((item) => (
+              <NavLink key={item.to} to={item.to} end={item.to === "/"} className={navLinkClass}>
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
 
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 fixed top-24 left-0 w-full z-40 shadow-xl">
-          {NAV_ITEMS.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.to === '/'}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-slate-700 py-2.5 w-full text-left font-bold text-base"
+          {/* Masaüstü CTA */}
+          <div className="hidden lg:flex items-center gap-2">
+            <a
+              href={whatsappHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackEvent("whatsapp_click", { from: "header" })}
+              aria-label="WhatsApp üzerinden yazın"
+              className="grid h-11 w-11 place-items-center rounded-2xl border border-line bg-white text-navy-700 transition-colors hover:border-emerald-300 hover:text-emerald-600"
             >
-              {item.label}
-            </NavLink>
-          ))}
-          <div className="pt-3">
+              <Icon name="whatsapp" filled className="h-5 w-5" />
+            </a>
+
             <Link
               to="/iletisim"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-center bg-gradient-to-r from-amber-500 to-orange-500 text-slate-900 font-bold py-4 rounded-xl shadow-lg"
+              onClick={() => trackEvent("generate_lead", { method: "iletisim_sayfasi", from: "header" })}
+              className="inline-flex h-11 items-center rounded-2xl bg-flame-700 px-5 text-sm font-extrabold text-white shadow-[0_8px_20px_-8px_rgba(187,85,0,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-flame-800"
             >
-              Ücretsiz Teklif Al →
+              Ücretsiz Teklif Al
+              <Icon name="arrowRight" className="ml-1.5 h-4 w-4" />
             </Link>
           </div>
+
+          {/* Mobil hamburger */}
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="grid h-11 w-11 place-items-center rounded-2xl border border-line text-navy-800 transition-colors hover:bg-surface lg:hidden"
+            aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+          >
+            <Icon name={open ? "close" : "menu"} className="h-5 w-5" />
+          </button>
+        </Container>
+      </header>
+
+      {/* Mobil menü paneli */}
+      {open && (
+        <div
+          id="mobile-menu"
+          className="menu-in fixed inset-x-0 top-[4.5rem] bottom-0 z-50 overflow-y-auto overscroll-contain border-t border-line bg-white lg:hidden"
+        >
+          <nav aria-label="Mobil menü" className="px-5 py-6 sm:px-6">
+            <ul className="space-y-1">
+              {NAV_ITEMS.map((item, i) => (
+                <li key={item.to} className="menu-item" style={{ animationDelay: `${i * 35}ms` }}>
+                  <NavLink
+                    to={item.to}
+                    end={item.to === "/"}
+                    className={({ isActive }) =>
+                      `flex items-center justify-between rounded-2xl px-4 py-3.5 text-[15px] font-bold transition-colors ${
+                        isActive
+                          ? "bg-ugr-50 text-ugr-600"
+                          : "text-navy-700 active:bg-surface"
+                      }`
+                    }
+                  >
+                    {item.label}
+                    <Icon name="arrowRight" className="h-4 w-4 opacity-40" />
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+
+            <div
+              className="menu-item mt-6 space-y-3 border-t border-line pt-6"
+              style={{ animationDelay: `${NAV_ITEMS.length * 35}ms` }}
+            >
+              <Link
+                to="/iletisim"
+                onClick={() =>
+                  trackEvent("generate_lead", { method: "iletisim_sayfasi", from: "mobile_menu" })
+                }
+                className="flex w-full items-center justify-center gap-2 rounded-2xl bg-flame-700 px-6 py-4 text-[15px] font-extrabold text-white shadow-[0_10px_24px_-10px_rgba(187,85,0,0.55)]"
+              >
+                Ücretsiz Teklif Al
+                <Icon name="arrowRight" className="h-4 w-4" />
+              </Link>
+
+              <a
+                href={whatsappHref()}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("whatsapp_click", { from: "mobile_menu" })}
+                className="flex w-full items-center justify-center gap-2 rounded-2xl border border-line bg-white px-6 py-4 text-[15px] font-extrabold text-navy-800"
+              >
+                <Icon name="whatsapp" filled className="h-5 w-5 text-emerald-500" />
+                WhatsApp&apos;tan Yaz
+              </a>
+            </div>
+          </nav>
         </div>
       )}
     </>

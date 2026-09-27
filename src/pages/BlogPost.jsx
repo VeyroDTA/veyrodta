@@ -1,70 +1,98 @@
-import { useEffect } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
-import { blogPosts } from '../data/blog';
-import BlogTopicIcon from '../components/BlogTopicIcon';
+import { useParams, Link, Navigate } from "react-router-dom";
+import { blogPosts } from "../data/blog";
+import BlogTopicIcon from "../components/BlogTopicIcon";
+import Seo from "../components/Seo";
+import Icon from "../components/Icon";
+import { quoteMailtoHref } from "../config";
 
 export default function BlogPost() {
   const { slug } = useParams();
   const post = blogPosts.find((p) => p.slug === slug);
 
-  // Sayfa başlığını yazıya göre günceller (SEO + tarayıcı sekmesi için).
-  // Not: Bu bir SPA olduğu için arama motoru önizlemesi (og:title vb.) index.html'deki
-  // sabit değerleri kullanır. Blog gerçekten SEO odaklı büyüyecekse ileride bu projeyi
-  // Astro/Next gibi statik üretim yapan bir yapıya taşımak en doğrusu olur.
-  useEffect(() => {
-    if (post) document.title = `${post.title} | UGR Blog`;
-    return () => {
-      document.title = 'UGR Studio | Kurumsal Web Tasarım & Dijital Çözümler';
-    };
-  }, [post]);
-
   if (!post) return <Navigate to="/blog" replace />;
 
   return (
-    <article className="max-w-3xl mx-auto px-6 py-20">
-      <Link to="/blog" className="inline-flex items-center gap-1.5 text-blue-700 text-sm font-semibold mb-8 hover:text-blue-800">
-        <span aria-hidden="true">←</span> Tüm Yazılar
-      </Link>
+    <>
+      <Seo
+        title={`${post.title} | UGR Studio Blog`}
+        description={post.excerpt}
+        path={`/blog/${post.slug}`}
+        type="article"
+      />
 
-      <div className="flex items-center gap-2 mb-4">
-        <span className="text-blue-700 font-bold text-xs uppercase tracking-widest">{post.category}</span>
-        <span className="text-slate-400 text-xs">· {post.date} · {post.readTime}</span>
-      </div>
+      <main id="main">
+        <article className="mx-auto w-full max-w-3xl px-5 py-12 sm:px-6 sm:py-16">
+          <Link
+            to="/blog"
+            className="mb-8 inline-flex items-center gap-1.5 text-[13.5px] font-bold text-ugr-600 transition-colors hover:text-ugr-700"
+          >
+            <Icon name="arrowLeft" className="h-4 w-4" />
+            Tüm Yazılar
+          </Link>
 
-      <h1 className="text-3xl sm:text-4xl font-black text-slate-900 mb-8 leading-tight">{post.title}</h1>
-
-      {post.image && (
-        <div className="relative rounded-2xl overflow-hidden border border-slate-200 mb-10 shadow-sm">
-          <img src={post.image} alt={post.title} className="w-full h-auto" />
-          <div className="absolute top-4 left-4">
-            <BlogTopicIcon icon={post.icon} className="w-12 h-12" />
+          <div className="mb-4 flex items-center gap-2">
+            <span className="text-[11px] font-extrabold tracking-[0.12em] text-ugr-600 uppercase">
+              {post.category}
+            </span>
+            <span className="text-[12px] text-navy-400">
+              · {post.date} · {post.readTime}
+            </span>
           </div>
-        </div>
-      )}
 
-      <div className="space-y-10">
-        {post.sections.map((section, i) => (
-          <div key={i}>
-            <h2 className="text-xl font-bold text-blue-800 mb-3">{section.heading}</h2>
-            <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
-              {section.body.map((paragraph, j) => (
-                <p key={j}>{paragraph}</p>
-              ))}
+          <h1 className="text-[24px] leading-tight font-extrabold tracking-tight text-navy-800 sm:text-[29px]">
+            {post.title}
+          </h1>
+
+          {post.image && (
+            <div className="relative mt-8 mb-10 overflow-hidden rounded-2xl border border-line">
+              <img src={post.image} alt={post.title} className="h-auto w-full" />
+              <div className="absolute top-4 left-4">
+                <BlogTopicIcon icon={post.icon} className="h-11 w-11" />
+              </div>
+            </div>
+          )}
+
+          <div className="space-y-9">
+            {post.sections.map((section, i) => (
+              <div key={i}>
+                <h2 className="mb-2.5 text-[18px] font-extrabold text-navy-800">
+                  {section.heading}
+                </h2>
+                <div className="space-y-3.5 text-[14.5px] leading-relaxed text-muted">
+                  {section.body.map((paragraph, j) => (
+                    <p key={j}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 rounded-2xl border border-ugr-100 bg-ugr-50 p-7 text-center sm:p-9">
+            <h2 className="text-xl font-extrabold text-navy-800">
+              Projenizi konuşalım mı?
+            </h2>
+            <p className="mx-auto mt-2.5 max-w-lg text-[14px] leading-relaxed text-muted">
+              Bu yazıda anlattığımız standartlarla, sizin için de anahtar teslim bir web sitesi
+              kurabiliriz.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                to="/iletisim"
+                className="inline-flex h-12 items-center gap-2 rounded-2xl bg-flame-700 px-6 text-[14.5px] font-extrabold text-white transition-colors duration-200 hover:bg-flame-800"
+              >
+                Ücretsiz Teklif Al
+                <Icon name="arrowRight" className="h-4 w-4" />
+              </Link>
+              <a
+                href={quoteMailtoHref()}
+                className="inline-flex h-12 items-center rounded-2xl border border-line bg-white px-5 text-[14.5px] font-extrabold text-navy-700 transition-colors duration-200 hover:border-ugr-200 hover:text-ugr-600"
+              >
+                E-posta Gönder
+              </a>
             </div>
           </div>
-        ))}
-      </div>
-
-      <div className="mt-14 bg-slate-900 rounded-2xl p-8 text-center">
-        <h3 className="text-xl font-bold text-white mb-2">Projenizi konuşalım mı?</h3>
-        <p className="text-sm text-slate-400 mb-5">Bu yazıda anlattığımız standartlarla, sizin için de anahtar teslim bir web sitesi kurabiliriz.</p>
-        <Link
-          to="/iletisim"
-          className="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-slate-900 font-extrabold px-8 py-3.5 rounded-xl shadow-lg hover:scale-105 transition-all"
-        >
-          Ücretsiz Teklif Al →
-        </Link>
-      </div>
-    </article>
+        </article>
+      </main>
+    </>
   );
 }

@@ -6,13 +6,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#040814" />
+    <meta name="theme-color" content="#0F172A" />
 
-    <!-- TODO: Site yayına girince başlığı/açıklamayı gözden geçir, src/config.js içindeki SITE_URL'i güncelle -->
-    <title>UGR Studio | Kurumsal Web Tasarım & Dijital Çözümler</title>
+    <!-- TODO: Site yayına girince src/config.js içindeki SITE_URL'i güncelle ve
+         buradaki alan adı geçen tüm etiketleri (canonical, OG, sitemap) elle eşle. -->
+    <title>UGR Studio | Web Tasarım & Dijital Çözümler</title>
     <meta
       name="description"
-      content="UGR Studio; kurumsal web sitesi, e-ticaret ve randevu sistemleri kuruyor. Şeffaf fiyatlandırma, anahtar teslim dijital çözümler ve profesyonel destek."
+      content="UGR Studio; kurumsal web sitesi, e-ticaret, özel web çözümleri ve modern dijital deneyimler geliştirir."
     />
     <link rel="canonical" href="https://www.ugrstudio.com.tr/" />
 
@@ -20,20 +21,20 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="tr_TR" />
     <meta property="og:site_name" content="UGR Studio" />
-    <meta property="og:title" content="UGR Studio | Kurumsal Web Tasarım & Dijital Çözümler" />
+    <meta property="og:title" content="UGR Studio | Web Tasarım & Dijital Çözümler" />
     <meta
       property="og:description"
-      content="Web sitenizi değil işinizi tasarlıyoruz. Kurumsal web, e-ticaret ve randevu sistemleri için şeffaf fiyatlarla anahtar teslim çözümler."
+      content="Web sitenizi değil işinizi tasarlıyoruz. Kurumsal web, e-ticaret ve özel web çözümleri için şeffaf fiyatlarla anahtar teslim çözümler."
     />
     <meta property="og:image" content="https://www.ugrstudio.com.tr/og-image.jpg" />
     <meta property="og:url" content="https://www.ugrstudio.com.tr/" />
 
     <!-- Twitter/X paylaşım önizlemesi -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="UGR Studio | Kurumsal Web Tasarım & Dijital Çözümler" />
+    <meta name="twitter:title" content="UGR Studio | Web Tasarım & Dijital Çözümler" />
     <meta
       name="twitter:description"
-      content="Web sitenizi değil işinizi tasarlıyoruz. Kurumsal web, e-ticaret ve randevu sistemleri için şeffaf fiyatlarla anahtar teslim çözümler."
+      content="Web sitenizi değil işinizi tasarlıyoruz. Kurumsal web, e-ticaret ve özel web çözümleri için şeffaf fiyatlarla anahtar teslim çözümler."
     />
     <meta name="twitter:image" content="https://www.ugrstudio.com.tr/og-image.jpg" />
 
@@ -57,7 +58,7 @@
         "url": "https://www.ugrstudio.com.tr/",
         "telephone": "+905394500402",
         "email": "iletisim@ugrstudio.com.tr",
-        "priceRange": "13.900₺ - 49.900₺",
+        "priceRange": "5.999₺ - 11.999₺",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Mimar Sinan 3. Etap",
@@ -83,13 +84,14 @@
       Font: Eskiden App.jsx içinde bir <style> etiketi içinde @import olarak
       yükleniyordu, bu da React mount olana kadar isteğin başlamamasına yol
       açıyordu (görünür metin gecikmesi / FOUT). Burada erkenden ve doğrudan
-      yükleniyor. 6 ağırlık yerine gerçekten kullanılan 3 tanesi bırakıldı.
+      yükleniyor. Gerçekten kullanılan ağırlıklar bırakıldı; Tailwind v4'te
+      font ailesi src/index.css içindeki @theme bloğunda tanımlıdır.
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
     />
 
     <!--
