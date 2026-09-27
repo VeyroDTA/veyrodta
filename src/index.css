@@ -1,6 +1,52 @@
 @import "tailwindcss";
 
 /* ══════════════════════════════════════════════════════════════
+   MANROPE — KENDİ SUNUCUMUZDAN
+   Google Fonts üzerinden çekmek Lighthouse'ta 891 ms render-blocking
+   istek olarak ölçüldü (üçüncü taraf CSS + DNS + TLS zinciri).
+   Font artık public/fonts/ altından geliyor: aynı Worker üzerinden,
+   ek servis yok, ek ücret yok.
+
+   Manrope SIL Open Font License (OFL 1.1) ile lisanslı — ticari
+   kullanım dahil bedava, self-hosting serbest.
+
+   Değişken font (variable font): 400-800 aralığı TEK dosyada. Yani
+   5 ağırlık için 5 ayrı dosya indirmedik, 2 dosya yeterli:
+     manrope-latin.woff2      24.836 bayt  (U+0000-00FF vb.)
+     manrope-latin-ext.woff2  15.120 bayt  (ş, ğ, İ vb.)
+
+   İKİ DOSYA DA ZORUNLU: Türkçede ş (U+015F), ğ (U+011F) ve İ (U+0130)
+   latin bloğunda DEĞİL, latin-ext bloğundadır. Sadece latin yüklenirse
+   site Türkçe karakterleri bozuk gösterir. unicode-range sayesinde
+   tarayıcı gereksiz bloğu indirmez ama latin-ext sitede her zaman
+   gereklidir (her sayfada Türkçe metin var).
+
+   font-display: swap — font gelene kadar sistem yazı tipi gösterilir,
+   metin görünmez olmaz. Ana sayfanın LCP'si yazı tipi beklerken
+   geç kalmasın diye.
+   ══════════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/manrope-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/manrope-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ══════════════════════════════════════════════════════════════
    UGR STUDIO — TASARIM SİSTEMİ
    Renk kimliği: beyaz zemin + koyu lacivert (navy) + UGR mavisi
    + turuncu CTA. Palet bilinçli olarak dar tutuldu.

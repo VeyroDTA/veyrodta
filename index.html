@@ -81,17 +81,37 @@
     </script>
 
     <!--
-      Font: Eskiden App.jsx içinde bir <style> etiketi içinde @import olarak
-      yükleniyordu, bu da React mount olana kadar isteğin başlamamasına yol
-      açıyordu (görünür metin gecikmesi / FOUT). Burada erkenden ve doğrudan
-      yükleniyor. Gerçekten kullanılan ağırlıklar bırakıldı; Tailwind v4'te
-      font ailesi src/index.css içindeki @theme bloğunda tanımlıdır.
+      Font: Manrope artık KENDİ sunucumuzdan geliyor (public/fonts/).
+      Neden: Google Fonts üzerinden çekildiğinde Lighthouse canlı
+      ölçümde 891 ms render-blocking istek olarak ölçtü. Üçüncü taraf
+      CSS + DNS + TLS zinciri kalkınca o gecikme gitti; dosyalar zaten
+      kullandığımız Worker'dan servis ediliyor, ek servis/ücret yok.
+
+      Manrope OFL 1.1 lisanslı (ticari kullanım dahil bedava).
+
+      İKİ dosya preload ediliyor, çünkü ikisi de her sayfada gerekiyor:
+        manrope-latin.woff2      → U+0000-00FF (ç, ö, ü, ı ...)
+        manrope-latin-ext.woff2  → ş, ğ, İ ... (latin bloğunda YOK)
+      Sadece latin yüklenirse Türkçe karakterler bozuk görünür.
+
+      preload, tarayıcıya bu iki dosyayı CSS'ten bağımsız olarak hemen
+      başlatmasını söyler. @font-face tanımları src/index.css içinde.
+      font-display: swap → font gelene kadar sistem yazı tipi kullanılır,
+      metin hiçbir zaman görünmez olmaz (FOUT yok).
     -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="preload"
+      href="/fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/manrope-latin-ext.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
     <!--
