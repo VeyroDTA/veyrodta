@@ -38,7 +38,7 @@ export function DesignStages() {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-ugr-50 text-ugr-600">
                 <Icon name={["users", "pen", "layers", "code"][i]} className="h-5 w-5" />
               </span>
-              <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-300">
+              <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-400">
                 {s.n}
               </span>
             </div>

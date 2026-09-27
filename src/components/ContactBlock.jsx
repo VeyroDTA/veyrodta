@@ -120,7 +120,7 @@ export default function ContactBlock({ withSection = true, showHeading = true, c
                   </span>
                   <span className="mt-0.5 block text-[12px] text-navy-400">{item.sub}</span>
                 </span>
-                <Icon name="arrowRight" className="h-4 w-4 flex-shrink-0 text-navy-300" />
+                <Icon name="arrowRight" className="h-4 w-4 flex-shrink-0 text-navy-400" />
               </div>
             );
 
@@ -164,7 +164,7 @@ export default function ContactBlock({ withSection = true, showHeading = true, c
                 <br />
                 {CONTACT_ADDRESS_LINE2}
               </span>
-              <span className="mt-2 block text-[12px] text-navy-400">
+              <span className="mt-2 block text-[12px] text-navy-500">
                 {CONTACT_CITY} · İstanbul ve tüm Türkiye&apos;ye uzaktan hizmet
               </span>
             </div>

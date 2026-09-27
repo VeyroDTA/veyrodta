@@ -49,7 +49,7 @@ export default function ServicesGrid({ withCta = true }) {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-ugr-50 text-ugr-600 transition-colors group-hover:bg-ugr-500 group-hover:text-white">
                 <Icon name={s.icon} className="h-5 w-5" />
               </span>
-              <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-300">
+              <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-400">
                 {s.order}
               </span>
             </div>

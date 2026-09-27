@@ -54,7 +54,7 @@ function ScreenTop({ title }) {
     <div className="flex items-center justify-between gap-1 border-b border-line px-1.5 py-1.5">
       {title ? (
         <>
-          <Icon name="arrowLeft" className="h-2.5 w-2.5 flex-none text-navy-300" />
+          <Icon name="arrowLeft" className="h-2.5 w-2.5 flex-none text-navy-400" />
           <span className="min-w-0 flex-1 truncate text-center text-[6.5px] font-extrabold text-navy-800 sm:text-[8px]">
             {title}
           </span>

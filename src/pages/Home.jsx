@@ -85,14 +85,44 @@ function Hero() {
             </Button>
           </Reveal>
 
+          {/* Hizmet şeridi — ziyaretçi ilk ekranda mobil uygulama hizmetini
+              görsün. "Mobil Uygulama" kendi detay sayfası olan tek hizmet
+              olduğu için vurgulanır ve linke dönüşür; diğerleri /hizmetler
+              sayfasına gider. */}
           <Reveal delay={240}>
-            <p className="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[12.5px] font-semibold text-navy-400">
-              <span>Kurumsal Web</span>
-              <span className="h-1 w-1 rounded-full bg-navy-300" />
-              <span>E-Ticaret</span>
-              <span className="h-1 w-1 rounded-full bg-navy-300" />
-              <span>Özel Web Çözümleri</span>
-            </p>
+            <nav
+              aria-label="Hizmetler"
+              className="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[12.5px] font-semibold"
+            >
+              <Link
+                to="/hizmetler"
+                className="text-navy-500 underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
+              >
+                Kurumsal Web
+              </Link>
+              <span className="h-1 w-1 rounded-full bg-navy-300" aria-hidden="true" />
+              <Link
+                to="/hizmetler"
+                className="text-navy-500 underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
+              >
+                E-Ticaret
+              </Link>
+              <span className="h-1 w-1 rounded-full bg-navy-300" aria-hidden="true" />
+              <Link
+                to="/mobil-uygulama-gelistirme"
+                className="inline-flex items-center gap-1 text-ugr-600 underline-offset-4 hover:underline"
+              >
+                Mobil Uygulama
+                <Icon name="arrowRight" className="h-3.5 w-3.5" />
+              </Link>
+              <span className="h-1 w-1 rounded-full bg-navy-300" aria-hidden="true" />
+              <Link
+                to="/hizmetler"
+                className="text-navy-500 underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
+              >
+                Özel Web Çözümleri
+              </Link>
+            </nav>
           </Reveal>
         </div>
 

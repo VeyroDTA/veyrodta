@@ -1,4 +1,4 @@
-﻿import { packages, PRICING_NOTE } from "../data/pricing";
+import { packages, PRICING_NOTE } from "../data/pricing";
 import { quoteMailtoHref } from "../config";
 import { trackEvent } from "../analytics";
 import { Section, SectionHeading, SrHeading, Container } from "./Section";
@@ -91,7 +91,7 @@ export default function PricingSection({ withSection = true, withHeading = true 
       </div>
 
       <Reveal className="mt-8 flex flex-wrap items-center justify-center gap-2 text-center">
-        <Icon name="document" className="h-4 w-4 flex-shrink-0 text-navy-300" />
+        <Icon name="document" className="h-4 w-4 flex-shrink-0 text-navy-400" />
         <p className="text-[12.5px] text-navy-400">{PRICING_NOTE}</p>
       </Reveal>
     </>

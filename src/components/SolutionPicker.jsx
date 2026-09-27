@@ -1,4 +1,4 @@
-﻿import { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { solutions } from "../data/solutions";
 import { quoteMailtoHref } from "../config";
@@ -125,7 +125,7 @@ export default function SolutionPicker() {
                   <Icon
                     name="chevronDown"
                     className={`h-4 w-4 flex-shrink-0 transition-transform duration-200 ${
-                      isActive ? "rotate-180 text-ugr-500" : "-rotate-90 text-navy-300"
+                      isActive ? "rotate-180 text-ugr-500" : "-rotate-90 text-navy-400"
                     }`}
                   />
                 </button>

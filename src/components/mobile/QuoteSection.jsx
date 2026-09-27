@@ -121,7 +121,7 @@ export default function QuoteSection() {
 
             <div className="mt-4 rounded-2xl border border-line bg-white p-4">
               <span className="flex items-start gap-2.5 text-[13px] leading-relaxed text-muted">
-                <Icon name="mapPin" className="mt-0.5 h-4 w-4 flex-none text-navy-300" />
+                <Icon name="mapPin" className="mt-0.5 h-4 w-4 flex-none text-navy-400" />
                 <span>
                   {CONTACT_ADDRESS_LINE1}
                   <br />
@@ -131,7 +131,7 @@ export default function QuoteSection() {
             </div>
 
             <p className="mt-4 flex items-center gap-2 text-[12.5px] font-semibold text-navy-500">
-              <Icon name="clock" className="h-4 w-4 flex-none text-navy-300" />
+              <Icon name="clock" className="h-4 w-4 flex-none text-navy-400" />
               {RESPONSE_PROMISE}
             </p>
           </Reveal>
