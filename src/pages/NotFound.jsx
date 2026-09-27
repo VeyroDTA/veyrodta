@@ -51,7 +51,7 @@ export default function NotFound() {
           </Reveal>
 
           <Reveal delay={260} className="mt-12 w-full border-t border-line pt-8">
-            <p className="mb-4 text-[12.5px] font-bold tracking-wide text-navy-400 uppercase">
+            <p className="mb-4 text-[13px] font-bold tracking-wide text-muted uppercase">
               Bunlar ilginizi çekebilir
             </p>
             <div className="flex flex-wrap justify-center gap-2">

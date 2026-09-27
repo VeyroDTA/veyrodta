@@ -71,7 +71,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[12.5px] font-semibold text-navy-400">
+            <p className="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] font-semibold text-muted">
               <span>Android</span>
               <span className="h-1 w-1 rounded-full bg-navy-300" />
               <span>iOS</span>

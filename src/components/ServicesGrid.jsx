@@ -49,24 +49,24 @@ export default function ServicesGrid({ withCta = true }) {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-ugr-50 text-ugr-600 transition-colors group-hover:bg-ugr-500 group-hover:text-white">
                 <Icon name={s.icon} className="h-5 w-5" />
               </span>
-              <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-400">
+              <span className="text-[11px] font-extrabold tracking-[0.18em] text-muted">
                 {s.order}
               </span>
             </div>
 
             {s.to ? (
-              <h3 className="text-[15.5px] font-extrabold text-navy-800 transition-colors group-hover:text-ugr-600">
+              <h3 className="text-[15px] font-extrabold text-navy-800 transition-colors group-hover:text-ugr-600">
                 {s.title}
               </h3>
             ) : (
-              <h3 className="text-[15.5px] font-extrabold text-navy-800">{s.title}</h3>
+              <h3 className="text-[15px] font-extrabold text-navy-800">{s.title}</h3>
             )}
 
             <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{s.short}</p>
 
             <ul className="mt-4 space-y-1.5 border-t border-line pt-4">
               {s.points.map((p) => (
-                <li key={p} className="flex items-start gap-2 text-[12.5px] text-navy-500">
+                <li key={p} className="flex items-start gap-2 text-[13px] text-muted">
                   <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-ugr-300" />
                   {p}
                 </li>
@@ -77,7 +77,7 @@ export default function ServicesGrid({ withCta = true }) {
                 tıklanabilir (aşağıdaki gerilmiş link), ama bu satır olmadan
                 ziyaretçi kartın tıklanabilir olduğunu anlayamıyor. */}
             {s.to && (
-              <span className="mt-5 inline-flex items-center gap-1.5 border-t border-line pt-4 text-[12.5px] font-extrabold text-ugr-600">
+              <span className="mt-5 inline-flex items-center gap-1.5 border-t border-line pt-4 text-[13px] font-extrabold text-ugr-600">
                 Detayları incele
                 <Icon
                   name="arrowRight"

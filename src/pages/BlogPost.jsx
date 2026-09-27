@@ -24,7 +24,7 @@ export default function BlogPost() {
         <article className="mx-auto w-full max-w-3xl px-5 py-12 sm:px-6 sm:py-16">
           <Link
             to="/blog"
-            className="mb-8 inline-flex items-center gap-1.5 text-[13.5px] font-bold text-ugr-600 transition-colors hover:text-ugr-700"
+            className="mb-8 inline-flex items-center gap-1.5 text-[14px] font-bold text-ugr-600 transition-colors hover:text-ugr-700"
           >
             <Icon name="arrowLeft" className="h-4 w-4" />
             Tüm Yazılar
@@ -34,7 +34,7 @@ export default function BlogPost() {
             <span className="text-[11px] font-extrabold tracking-[0.12em] text-ugr-600 uppercase">
               {post.category}
             </span>
-            <span className="text-[12px] text-navy-400">
+            <span className="text-[13px] text-muted">
               · {post.date} · {post.readTime}
             </span>
           </div>
@@ -58,7 +58,7 @@ export default function BlogPost() {
                 <h2 className="mb-2.5 text-[18px] font-extrabold text-navy-800">
                   {section.heading}
                 </h2>
-                <div className="space-y-3.5 text-[14.5px] leading-relaxed text-muted">
+                <div className="space-y-3.5 text-[15px] leading-relaxed text-muted">
                   {section.body.map((paragraph, j) => (
                     <p key={j}>{paragraph}</p>
                   ))}
@@ -78,14 +78,14 @@ export default function BlogPost() {
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link
                 to="/iletisim"
-                className="inline-flex h-12 items-center gap-2 rounded-2xl bg-flame-700 px-6 text-[14.5px] font-extrabold text-white transition-colors duration-200 hover:bg-flame-800"
+                className="inline-flex h-12 items-center gap-2 rounded-2xl bg-flame-700 px-6 text-[15px] font-extrabold text-white transition-colors duration-200 hover:bg-flame-800"
               >
                 Ücretsiz Teklif Al
                 <Icon name="arrowRight" className="h-4 w-4" />
               </Link>
               <a
                 href={quoteMailtoHref()}
-                className="inline-flex h-12 items-center rounded-2xl border border-line bg-white px-5 text-[14.5px] font-extrabold text-navy-700 transition-colors duration-200 hover:border-ugr-200 hover:text-ugr-600"
+                className="inline-flex h-12 items-center rounded-2xl border border-line bg-white px-5 text-[15px] font-extrabold text-navy-700 transition-colors duration-200 hover:border-ugr-200 hover:text-ugr-600"
               >
                 E-posta Gönder
               </a>

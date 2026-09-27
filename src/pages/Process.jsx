@@ -69,7 +69,7 @@ export default function Process() {
                   <Icon name={e.icon} className="h-5 w-5" />
                 </span>
                 <div>
-                  <h3 className="text-[15.5px] font-extrabold text-navy-800">{e.title}</h3>
+                  <h3 className="text-[15px] font-extrabold text-navy-800">{e.title}</h3>
                   <p className="mt-1.5 text-[13px] leading-relaxed text-muted">{e.desc}</p>
                 </div>
               </Reveal>

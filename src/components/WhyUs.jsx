@@ -49,11 +49,11 @@ export default function WhyUs({ withSection = true }) {
             <span className="grid h-11 w-11 place-items-center rounded-xl bg-ugr-50 text-ugr-600">
               <Icon name={r.icon} className="h-5 w-5" />
             </span>
-            <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-400">
+            <span className="text-[11px] font-extrabold tracking-[0.18em] text-muted">
               {r.n}
             </span>
           </div>
-          <h3 className="text-[15.5px] font-extrabold text-navy-800">{r.title}</h3>
+          <h3 className="text-[15px] font-extrabold text-navy-800">{r.title}</h3>
           <p className="mt-2 text-[13px] leading-relaxed text-muted">{r.desc}</p>
         </Reveal>
       ))}

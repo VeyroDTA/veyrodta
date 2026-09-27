@@ -98,7 +98,7 @@ export default function ContactBlock({ withSection = true, showHeading = true, c
               : "Size en uygun kapsamı birlikte belirlemek için önce sizi dinleyelim. Bize e-posta yazın ya da doğrudan telefonla arayın."}
           </p>
 
-          <p className="mt-4 inline-flex items-center gap-2 rounded-xl border border-line bg-surface px-3.5 py-2 text-[12.5px] font-bold text-navy-600">
+          <p className="mt-4 inline-flex items-center gap-2 rounded-xl border border-line bg-surface px-3.5 py-2 text-[13px] font-bold text-navy-600">
             <Icon name="clock" className="h-4 w-4 text-ugr-500" />
             {RESPONSE_PROMISE}
           </p>
@@ -112,15 +112,15 @@ export default function ContactBlock({ withSection = true, showHeading = true, c
                   <Icon name={item.icon} filled={item.icon === "whatsapp"} className="h-5 w-5" />
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block text-[11px] font-extrabold tracking-wide text-navy-400 uppercase">
+                  <span className="block text-[11px] font-extrabold tracking-wide text-muted uppercase">
                     {item.label}
                   </span>
-                  <span className="mt-0.5 block text-[14.5px] leading-snug font-extrabold text-navy-800 [overflow-wrap:anywhere]">
+                  <span className="mt-0.5 block text-[15px] leading-snug font-extrabold text-navy-800 [overflow-wrap:anywhere]">
                     {item.value}
                   </span>
-                  <span className="mt-0.5 block text-[12px] text-navy-400">{item.sub}</span>
+                  <span className="mt-0.5 block text-[13px] text-muted">{item.sub}</span>
                 </span>
-                <Icon name="arrowRight" className="h-4 w-4 flex-shrink-0 text-navy-400" />
+                <Icon name="arrowRight" className="h-4 w-4 flex-shrink-0 text-muted" />
               </div>
             );
 
@@ -145,7 +145,7 @@ export default function ContactBlock({ withSection = true, showHeading = true, c
         <Reveal className="mt-3">
           <button
             onClick={copyPhone}
-            className="inline-flex cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-[12.5px] font-bold text-navy-400 transition-colors hover:bg-surface hover:text-ugr-600"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-[13px] font-bold text-muted transition-colors hover:bg-surface hover:text-ugr-600"
           >
             <Icon name={copied ? "check" : "document"} className="h-3.5 w-3.5" />
             {copied ? "Numara kopyalandı" : "Telefon numarasını kopyala"}
@@ -164,7 +164,7 @@ export default function ContactBlock({ withSection = true, showHeading = true, c
                 <br />
                 {CONTACT_ADDRESS_LINE2}
               </span>
-              <span className="mt-2 block text-[12px] text-navy-500">
+              <span className="mt-2 block text-[13px] text-muted">
                 {CONTACT_CITY} · İstanbul ve tüm Türkiye&apos;ye uzaktan hizmet
               </span>
             </div>

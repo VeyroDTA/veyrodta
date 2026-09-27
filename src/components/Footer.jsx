@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   CONTACT_ADDRESS_LINE1,
   CONTACT_ADDRESS_LINE2,
@@ -53,8 +53,17 @@ const legalLinks = [
   { label: "Kullanım Koşulları", to: "/kullanim-kosullari" },
 ];
 
+// Footer baglantisi: dokunulabilir yukseklik (en az 44px).
+// Sikilastirma yalnizca INCE IMLEC (fare) olan cihazlarda gecerli:
+//   @media (hover: hover) and (pointer: fine)
+// Boylece iPad (768px) gibi dokunmatik tabletlerde de 44px kalir.
+// Eski hali sm: (640px) kullaniyordu; iPad 768px oldugu icin dokunmatik
+// kullaniciya 20px hedef veriyordu.
+const FOOTER_LINK =
+  "inline-flex min-h-[44px] items-center py-2.5 transition-colors duration-200 hover:text-ugr-300 [@media(hover:hover)_and_(pointer:fine)]:min-h-0 [@media(hover:hover)_and_(pointer:fine)]:py-0";
+
 function FooterLink({ item, className = "" }) {
-  const cls = `transition-colors duration-200 hover:text-ugr-300 ${className}`;
+  const cls = `${FOOTER_LINK} ${className}`;
   return item.href ? (
     <a href={item.href} target="_blank" rel="noopener noreferrer" className={cls}>
       {item.label}
@@ -69,10 +78,16 @@ function FooterLink({ item, className = "" }) {
 function FooterGroup({ title, children }) {
   return (
     <div>
-      <h3 className="mb-4 text-[11px] font-extrabold tracking-[0.16em] text-white uppercase">
+      <h3 className="mb-2 text-[11px] font-extrabold tracking-[0.16em] text-white uppercase">
         {title}
       </h3>
-      <ul className="space-y-2.5 text-[13px] text-navy-300">{children}</ul>
+      {/* Dokunma alani: mobilde her baglanti en az 44px yuksekliginde
+          olsun. Dikey bosluk (space-y) yerine linkin kendi dolgusu
+          kullanilir, boylece 13px metin + 20px dolgu = 44px.
+          Ince imlecli (fare) cihazlarda bosluk 10px'e doner. */}
+      <ul className="text-[13px] text-navy-300 [@media(hover:hover)_and_(pointer:fine)]:space-y-2.5">
+        {children}
+      </ul>
     </div>
   );
 }
@@ -92,7 +107,7 @@ export default function Footer() {
               Modern, hızlı ve dönüşüm odaklı web çözümleri. Tasarım, geliştirme ve yayın
               sürecini tek elden yürüten bağımsız bir dijital stüdyo.
             </p>
-            <p className="mt-4 text-[12px] font-semibold text-navy-300">
+            <p className="mt-4 text-[13px] font-semibold text-navy-300">
               İstanbul ve tüm Türkiye&apos;ye uzaktan hizmet veriyoruz.
             </p>
           </div>
@@ -129,7 +144,10 @@ export default function Footer() {
               {CONTACT_ADDRESS_LINE2}
             </li>
             <li className="pt-1">
-              <a href={phoneHref()} className="flex items-center gap-2 transition-colors hover:text-ugr-300">
+              <a
+                href={phoneHref()}
+                className="flex min-h-[44px] items-center gap-2 transition-colors hover:text-ugr-300 [@media(hover:hover)_and_(pointer:fine)]:min-h-0"
+              >
                 <Icon name="phone" className="h-4 w-4 flex-shrink-0 opacity-70" />
                 {phoneDisplay()}
               </a>
@@ -137,7 +155,7 @@ export default function Footer() {
             <li>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="flex items-center gap-2 break-all transition-colors hover:text-ugr-300"
+                className="flex min-h-[44px] items-center gap-2 break-all transition-colors hover:text-ugr-300 [@media(hover:hover)_and_(pointer:fine)]:min-h-0"
               >
                 <Icon name="mail" className="h-4 w-4 flex-shrink-0 opacity-70" />
                 {CONTACT_EMAIL}
@@ -148,7 +166,7 @@ export default function Footer() {
                 href={whatsappHref()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 transition-colors hover:text-ugr-300"
+                className="flex min-h-[44px] items-center gap-2 transition-colors hover:text-ugr-300 [@media(hover:hover)_and_(pointer:fine)]:min-h-0"
               >
                 <Icon name="whatsapp" filled className="h-4 w-4 flex-shrink-0 opacity-70" />
                 WhatsApp&apos;tan Yazın
@@ -165,7 +183,7 @@ export default function Footer() {
       {/* Alt bar — yasal bağlantılar + telif */}
       <div className="border-t border-navy-700">
         <Container className="py-6">
-          <ul className="mb-4 flex flex-wrap gap-x-5 gap-y-2 text-[12px]">
+          <ul className="mb-4 flex flex-wrap gap-x-5 gap-y-2 text-[13px]">
             {legalLinks.map((l) => (
               <li key={l.label}>
                 <FooterLink item={l} className="text-navy-300 hover:text-ugr-300" />
@@ -173,7 +191,7 @@ export default function Footer() {
             ))}
           </ul>
 
-          <p className="text-[12px] text-navy-300">
+          <p className="text-[13px] text-navy-300">
             © {new Date().getFullYear()} UGR Studio. Tüm hakları saklıdır.
           </p>
         </Container>

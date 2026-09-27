@@ -47,10 +47,10 @@ export default function QuickTrust() {
                 <Icon name={item.icon} className="h-5 w-5" />
               </span>
               <span>
-                <span className="block text-[14.5px] font-extrabold text-navy-800">
+                <span className="block text-[15px] font-extrabold text-navy-800">
                   {item.title}
                 </span>
-                <span className="mt-1 block text-[12.5px] leading-relaxed text-muted">
+                <span className="mt-1 block text-[13px] leading-relaxed text-muted">
                   {item.desc}
                 </span>
               </span>

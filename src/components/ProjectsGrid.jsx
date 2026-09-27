@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { projectsData } from "../data/projects";
 import { Section, SectionHeading, SrHeading, Container } from "./Section";
 import { Reveal } from "./Reveal";
@@ -49,8 +49,15 @@ function ProjectCard({ project, onOpen }) {
 
         <button
           onClick={() => onOpen(project)}
-          className="mt-5 inline-flex cursor-pointer items-center gap-1.5 self-start text-[13.5px] font-extrabold text-navy-800 transition-colors hover:text-ugr-600"
+          // Dokunma alani: metin 14px -> ozgun yuksekligi ~21px; mobilde
+          // parmakla vurmasi zor. Ic ice gecici bir <span> butonu 12px asagi
+          // yukari genisletir. Konumu negatif oldugu icin yerlesim HIC degismez,
+          // yalnizca dokunulabilir alan 21px -> 45px olur.
+          // (CSS ::after denendi, hesaplaniyor ama hit-test'e girmiyordu;
+          //  gercek bir oge guarantees tikanir.)
+          className="relative mt-5 inline-flex cursor-pointer items-center gap-1.5 self-start text-[14px] font-extrabold text-navy-800 transition-colors hover:text-ugr-600"
         >
+          <span className="absolute -inset-y-3 right-0 left-0" aria-hidden="true" />
           Projeyi İncele
           <Icon
             name="arrowRight"

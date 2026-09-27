@@ -37,10 +37,10 @@ export function MobileTrust() {
                 <Icon name={item.icon} className="h-5 w-5" />
               </span>
               <span className="min-w-0">
-                <span className="block text-[14.5px] font-extrabold text-navy-800">
+                <span className="block text-[15px] font-extrabold text-navy-800">
                   {item.title}
                 </span>
-                <span className="mt-1 block text-[12.5px] leading-relaxed text-muted">
+                <span className="mt-1 block text-[13px] leading-relaxed text-muted">
                   {item.desc}
                 </span>
               </span>
@@ -87,7 +87,7 @@ export function Intro() {
                 <span className="block text-[11px] font-extrabold tracking-[0.14em] text-ugr-600 uppercase">
                   {f.label}
                 </span>
-                <span className="mt-1.5 block text-[13.5px] leading-snug font-bold text-navy-800">
+                <span className="mt-1.5 block text-[14px] leading-snug font-bold text-navy-800">
                   {f.value}
                 </span>
               </Reveal>
@@ -110,7 +110,7 @@ export function Intro() {
             </div>
           </div>
 
-          <p className="mt-5 text-center text-[11.5px] font-semibold text-navy-400">
+          <p className="mt-5 text-center text-[11.5px] font-semibold text-muted">
             Yukarıdaki ekranlar konsept arayüz çizimleridir.
           </p>
         </Reveal>
@@ -142,11 +142,11 @@ export function UseCases() {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-ugr-50 text-ugr-600">
                 <Icon name={u.icon} className="h-5 w-5" />
               </span>
-              <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-400">
+              <span className="text-[11px] font-extrabold tracking-[0.18em] text-muted">
                 {u.order}
               </span>
             </div>
-            <h3 className="text-[15.5px] font-extrabold text-navy-800">{u.title}</h3>
+            <h3 className="text-[15px] font-extrabold text-navy-800">{u.title}</h3>
             <p className="mt-2 text-[13px] leading-relaxed text-muted">{u.desc}</p>
           </Reveal>
         ))}
@@ -177,7 +177,7 @@ export function Features() {
             <span className="grid h-8 w-8 flex-none place-items-center rounded-lg bg-ugr-50 text-ugr-600">
               <Icon name={f.icon} className="h-4 w-4" />
             </span>
-            <span className="min-w-0 text-[13.5px] font-bold text-navy-700">{f.label}</span>
+            <span className="min-w-0 text-[14px] font-bold text-navy-700">{f.label}</span>
           </Reveal>
         ))}
       </ul>
@@ -219,7 +219,7 @@ export function Ecosystem() {
       </ul>
 
       <Reveal className="mt-8 text-center">
-        <p className="text-[12.5px] text-navy-500">
+        <p className="text-[13px] text-muted">
           İhtiyaca göre bu sistemler API ve farklı entegrasyonlarla birbirine bağlanabilir.
         </p>
       </Reveal>

@@ -67,7 +67,7 @@ export default function Blog() {
                   <p className="mt-3 text-[14px] leading-relaxed text-muted">
                     {pillarPost.excerpt}
                   </p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-extrabold text-ugr-600">
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-extrabold text-ugr-600">
                     Yazıyı Oku
                     <Icon
                       name="arrowRight"
@@ -104,12 +104,12 @@ export default function Blog() {
                       <span className="text-[11px] font-extrabold tracking-[0.12em] text-ugr-600 uppercase">
                         {post.category}
                       </span>
-                      <span className="text-[11px] text-navy-400">· {post.readTime}</span>
+                      <span className="text-[11px] text-muted">· {post.readTime}</span>
                     </div>
                     <h3 className="text-[16px] leading-snug font-extrabold text-navy-800">
                       {post.title}
                     </h3>
-                    <p className="mt-2.5 text-[13.5px] leading-relaxed text-muted">
+                    <p className="mt-2.5 text-[14px] leading-relaxed text-muted">
                       {post.excerpt}
                     </p>
                     <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-extrabold text-ugr-600">

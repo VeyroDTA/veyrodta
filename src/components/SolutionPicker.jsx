@@ -24,7 +24,7 @@ function SolutionPhone({ solution }) {
 
       {/* Arama satırı */}
       <div className="mb-2 flex items-center gap-1.5 rounded-full border border-line bg-surface px-2 py-1.5">
-        <Icon name="search" className="h-3 w-3 flex-shrink-0 text-navy-400" />
+        <Icon name="search" className="h-3 w-3 flex-shrink-0 text-muted" />
         <span className="truncate text-[11px] font-semibold text-navy-700">
           {solution.searchQuery}
         </span>
@@ -107,7 +107,7 @@ export default function SolutionPicker() {
                 >
                   <span
                     className={`grid h-12 w-12 flex-shrink-0 place-items-center rounded-xl transition-colors ${
-                      isActive ? "bg-ugr-500 text-white" : "bg-white text-navy-400 ring-1 ring-line"
+                      isActive ? "bg-ugr-500 text-white" : "bg-white text-muted ring-1 ring-line"
                     }`}
                   >
                     <Icon name={s.icon} className="h-[22px] w-[22px]" />
@@ -125,7 +125,7 @@ export default function SolutionPicker() {
                   <Icon
                     name="chevronDown"
                     className={`h-4 w-4 flex-shrink-0 transition-transform duration-200 ${
-                      isActive ? "rotate-180 text-ugr-500" : "-rotate-90 text-navy-400"
+                      isActive ? "rotate-180 text-ugr-500" : "-rotate-90 text-muted"
                     }`}
                   />
                 </button>
@@ -150,15 +150,15 @@ export default function SolutionPicker() {
               <h3 className="text-lg font-extrabold text-navy-800 sm:text-xl">
                 {active.title}
               </h3>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-muted">{active.desc}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-muted">{active.desc}</p>
 
               <div className="mt-6">
-                <span className="text-[11px] font-extrabold tracking-[0.14em] text-navy-400 uppercase">
+                <span className="text-[11px] font-extrabold tracking-[0.14em] text-muted uppercase">
                   Örnek hizmetler
                 </span>
                 <ul className="mt-3 space-y-2.5">
                   {active.examples.map((ex) => (
-                    <li key={ex} className="flex items-start gap-2.5 text-[13.5px] text-navy-600">
+                    <li key={ex} className="flex items-start gap-2.5 text-[14px] text-navy-600">
                       <span className="mt-0.5 grid h-4 w-4 flex-shrink-0 place-items-center rounded-full bg-ugr-50 text-ugr-600">
                         <Icon name="check" className="h-2.5 w-2.5" />
                       </span>
@@ -169,13 +169,13 @@ export default function SolutionPicker() {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                <span className="rounded-lg border border-line bg-surface px-3 py-1.5 text-[12px] font-bold text-navy-700">
+                <span className="rounded-lg border border-line bg-surface px-3 py-1.5 text-[13px] font-bold text-navy-700">
                   {active.scope}
                 </span>
-                <span className="rounded-lg border border-line bg-surface px-3 py-1.5 text-[12px] font-bold text-navy-700">
+                <span className="rounded-lg border border-line bg-surface px-3 py-1.5 text-[13px] font-bold text-navy-700">
                   {active.duration}
                 </span>
-                <span className="rounded-lg border border-line bg-surface px-3 py-1.5 text-[12px] font-bold text-navy-700">
+                <span className="rounded-lg border border-line bg-surface px-3 py-1.5 text-[13px] font-bold text-navy-700">
                   {active.priceFrom}
                 </span>
               </div>
@@ -198,7 +198,7 @@ export default function SolutionPicker() {
               {/* Detay sayfası olan kategoriler için: ana sayfadan mobil
                   uygulama sayfasına ikinci ve en görünür yol. */}
               {active.to && (
-                <p className="mt-5 border-t border-line pt-5 text-[13.5px] text-muted">
+                <p className="mt-5 border-t border-line pt-5 text-[14px] text-muted">
                   Bu hizmetin kapsamını, sürecini ve örnek çalışmalarını{" "}
                   <Link
                     to={active.to}

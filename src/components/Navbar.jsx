@@ -55,7 +55,7 @@ export default function Navbar() {
   }, [open]);
 
   const navLinkClass = ({ isActive }) =>
-    `relative py-1.5 text-[13.5px] font-bold transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:rounded-full after:bg-ugr-500 after:transition-all ${
+    `relative py-1.5 text-[14px] font-bold transition-colors duration-200 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:rounded-full after:bg-ugr-500 after:transition-all ${
       isActive
         ? "text-ugr-600 after:w-full"
         : "text-navy-600 after:w-0 hover:text-ugr-600 hover:after:w-full"

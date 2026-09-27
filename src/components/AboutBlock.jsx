@@ -1,4 +1,5 @@
-﻿import { Section, SectionHeading, SrHeading, Container } from "./Section";
+import { Link } from "react-router-dom";
+import { Section, SectionHeading, SrHeading, Container } from "./Section";
 import { Reveal } from "./Reveal";
 import Icon from "./Icon";
 import Button from "./Button";
@@ -7,6 +8,14 @@ import Button from "./Button";
 // HAKKIMIZDA
 // İstatistikler bilinçli olarak sadece DOĞRULANABİLİR olanlardan seçildi.
 // "∞ Kodlanan Projeler" gibi anlamsız ya da gerçeği yansıtmayan rakamlar yok.
+//
+// compact (true) — ana sayfa için kısa hâl
+// Ana sayfada hem "Neden UGR Studio?" hem de tam About bloğu üst üste
+// geliyordu; ikisi de aynı mesajı veriyordu (güven, şeffaflık, doğrudan
+// çalışma). Tam hâl 1.123 piksel tutuyordu ve /hakkimizda sayfasının
+// içeriğini tekrar ediyordu.
+// Kısa hâlde yalnızca istatistikler + tek cümle + "Hakkımızda" bağlantısı
+// kalır. Avantaj listesi ve uzun metinler o sayfada durur.
 // ─────────────────────────────────────────────
 
 const stats = [
@@ -26,7 +35,60 @@ const advantages = [
   { icon: "handshake", text: "Doğrudan geliştiriciyle çalışma — projenizi teslim eden kişiyle konuşuyorsunuz." },
 ];
 
-export default function AboutBlock({ withSection = true, withCta = true }) {
+// Ana sayfa için kısa hâl: istatistikler + tek cümle + detay bağlantısı.
+function AboutStatsCompact() {
+  return (
+    <div>
+      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+        {stats.map((s, i) => (
+          <Reveal
+            key={s.label}
+            as="li"
+            delay={i * 60}
+            className="rounded-2xl border border-line bg-white p-4 text-center"
+          >
+            <span className="block text-[22px] leading-none font-extrabold text-ugr-600">
+              {s.value}
+            </span>
+            <span className="mt-2 block text-[11px] font-semibold text-muted">{s.label}</span>
+          </Reveal>
+        ))}
+      </ul>
+
+      <Reveal className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <p className="max-w-xl text-[15px] leading-relaxed text-muted">
+          UGR Studio; web tasarımı, mobil uygulama ve özel yazılım üzerine çalışan bağımsız bir
+          stüdyodur. Hazır şablonları tekrar etmek yerine markanın ihtiyacına göre özgün çözümler
+          geliştiriyoruz.
+        </p>
+        <Link
+          to="/hakkimizda"
+          className="inline-flex shrink-0 items-center gap-1.5 text-[14px] font-extrabold text-ugr-600 underline-offset-4 hover:underline"
+        >
+          Biz kimiz?
+          <Icon name="arrowRight" className="h-4 w-4" />
+        </Link>
+      </Reveal>
+    </div>
+  );
+}
+
+export default function AboutBlock({ withSection = true, withCta = true, compact = false }) {
+  if (compact) {
+    return (
+      <Section id="hakkimizda" tone="surface" bordered>
+        <SectionHeading
+          eyebrow="HAKKIMIZDA"
+          align="left"
+          title="Fikirleri Dijital Deneyimlere"
+          highlight="Dönüştürüyoruz."
+          description="Marka, tasarım ve teknolojiyi tek bir ekipte bir araya getiriyoruz."
+        />
+        <AboutStatsCompact />
+      </Section>
+    );
+  }
+
   const body = (
     <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
       {/* Sol — metin + istatistikler */}
@@ -42,14 +104,14 @@ export default function AboutBlock({ withSection = true, withCta = true }) {
               <span className="block text-[22px] leading-none font-extrabold text-ugr-600">
                 {s.value}
               </span>
-              <span className="mt-2 block text-[11px] font-semibold text-navy-400">
+              <span className="mt-2 block text-[11px] font-semibold text-muted">
                 {s.label}
               </span>
             </Reveal>
           ))}
         </ul>
 
-        <div className="mt-8 space-y-4 text-[14.5px] leading-relaxed text-muted">
+        <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted">
           <p>
             UGR Studio; modern web tasarımı, geliştirme ve dijital çözümler üzerine çalışan
             bağımsız bir stüdyodur.

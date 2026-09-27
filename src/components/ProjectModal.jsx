@@ -91,7 +91,7 @@ export default function ProjectModal({ project, onClose }) {
             ref={closeBtnRef}
             onClick={onClose}
             aria-label="Pencereyi kapat"
-            className="absolute top-3 right-3 grid h-9 w-9 cursor-pointer place-items-center rounded-full border border-line bg-white/95 text-navy-500 backdrop-blur transition-colors duration-200 hover:border-navy-200 hover:text-navy-800"
+            className="absolute top-3 right-3 grid h-9 w-9 cursor-pointer place-items-center rounded-full border border-line bg-white/95 text-muted backdrop-blur transition-colors duration-200 hover:border-navy-200 hover:text-navy-800"
           >
             <Icon name="close" className="h-4 w-4" />
           </button>
@@ -118,7 +118,7 @@ export default function ProjectModal({ project, onClose }) {
                 <span className="block text-[11px] font-extrabold tracking-[0.12em] text-ugr-600 uppercase">
                   {label}
                 </span>
-                <p className="mt-1.5 text-[13.5px] leading-relaxed text-muted">{project[key]}</p>
+                <p className="mt-1.5 text-[14px] leading-relaxed text-muted">{project[key]}</p>
               </div>
             ))}
           </div>

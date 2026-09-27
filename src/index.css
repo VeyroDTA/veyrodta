@@ -52,6 +52,17 @@
   --color-surface: #f4f7fb;
   --color-line: #e5eaf2;
   --color-ink: #0f172a;
+
+  /* İkincil metin rengi — sistemdeki TEK gri.
+     Önceden iki yakın gri vardı: #52627a (muted) ve #64748b (navy-400),
+     ikisi de "gri metin" işi görüyordu ama farklı yerlerde kullanılıyordu.
+     Bu, tutarsız bir palet yaratıyordu. Artık gövde/ikincil metin için
+     yalnızca bu tek değer kullanılır (text-muted).
+     Beyaz üzerinde 6.20:1, surface (#f4f7fb) üzerinde 5.77:1 — WCAG AA.
+     NOT: text-navy-400 / text-navy-500 artık kullanılmaz; ikincil metin
+     için her zaman text-muted yazılır. HeroMockup.jsx içindeki griler
+     istisnadır: bunlar dekoratif telefon ekranı içindeki sahte site
+     metinleridir, gerçek müşteri sitesini taklit eder. */
   --color-muted: #52627a;
 
   /* Sabit header yüksekliği — scroll-padding ve anchor hesabı için */

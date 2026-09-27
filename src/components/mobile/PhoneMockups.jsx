@@ -54,7 +54,7 @@ function ScreenTop({ title }) {
     <div className="flex items-center justify-between gap-1 border-b border-line px-1.5 py-1.5">
       {title ? (
         <>
-          <Icon name="arrowLeft" className="h-2.5 w-2.5 flex-none text-navy-400" />
+          <Icon name="arrowLeft" className="h-2.5 w-2.5 flex-none text-muted" />
           <span className="min-w-0 flex-1 truncate text-center text-[6.5px] font-extrabold text-navy-800 sm:text-[8px]">
             {title}
           </span>
@@ -71,7 +71,7 @@ function ScreenTop({ title }) {
             </span>
           </span>
           <span className="relative flex-none">
-            <Icon name="bell" className="h-2.5 w-2.5 text-navy-400" />
+            <Icon name="bell" className="h-2.5 w-2.5 text-muted" />
             <span className="absolute -top-0.5 -right-0.5 h-1 w-1 rounded-full bg-flame-500" />
           </span>
         </>
@@ -139,7 +139,7 @@ export function ProfileScreen() {
           <span className="block truncate text-[6px] font-extrabold text-navy-800 sm:text-[7.5px]">
             Profilim
           </span>
-          <span className="block truncate text-[5px] font-semibold text-navy-400 sm:text-[6px]">
+          <span className="block truncate text-[5px] font-semibold text-muted sm:text-[6px]">
             Üyelik durumu: Aktif
           </span>
         </span>
@@ -179,7 +179,7 @@ export function OrderScreen() {
             />
             <span
               className={`truncate text-[5.5px] font-bold sm:text-[6.5px] ${
-                i === 0 ? "text-navy-800" : "text-navy-400"
+                i === 0 ? "text-navy-800" : "text-muted"
               }`}
             >
               {s}

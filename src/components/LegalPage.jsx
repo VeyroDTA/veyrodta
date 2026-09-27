@@ -43,7 +43,7 @@ export default function LegalPage({
               {intro && (
                 <p className="mt-4 text-[15px] leading-relaxed text-muted">{intro}</p>
               )}
-              <p className="mt-4 text-[12.5px] text-navy-400">
+              <p className="mt-4 text-[13px] text-muted">
                 Son güncelleme: {LEGAL_UPDATED_AT}
               </p>
             </Reveal>
@@ -58,7 +58,7 @@ export default function LegalPage({
               <span className="grid h-8 w-8 flex-shrink-0 place-items-center rounded-lg bg-white text-flame-600">
                 <Icon name="document" className="h-4 w-4" />
               </span>
-              <div className="text-[12.5px] leading-relaxed text-navy-600">
+              <div className="text-[13px] leading-relaxed text-navy-600">
                 <strong className="font-extrabold">Bu metin bir taslaktır.</strong> UGR Studio
                 tarafından hazırlanmış olsa da hukuki danışmanlık yerine geçmez. Ticari
                 kullanım öncesinde bir hukuk uzmanı tarafından kontrol edilmesi gerekir. Bu

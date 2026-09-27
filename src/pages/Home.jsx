@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import Button from "../components/Button";
 import Icon from "../components/Icon";
@@ -92,18 +92,18 @@ function Hero() {
           <Reveal delay={240}>
             <nav
               aria-label="Hizmetler"
-              className="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[12.5px] font-semibold"
+              className="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[13px] font-semibold"
             >
               <Link
                 to="/hizmetler"
-                className="text-navy-500 underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
+                className="text-muted underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
               >
                 Kurumsal Web
               </Link>
               <span className="h-1 w-1 rounded-full bg-navy-300" aria-hidden="true" />
               <Link
                 to="/hizmetler"
-                className="text-navy-500 underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
+                className="text-muted underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
               >
                 E-Ticaret
               </Link>
@@ -118,7 +118,7 @@ function Hero() {
               <span className="h-1 w-1 rounded-full bg-navy-300" aria-hidden="true" />
               <Link
                 to="/hizmetler"
-                className="text-navy-500 underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
+                className="text-muted underline-offset-4 transition-colors hover:text-ugr-600 hover:underline"
               >
                 Özel Web Çözümleri
               </Link>
@@ -153,7 +153,7 @@ export default function Home() {
         <PricingSection />
         <ProcessSteps />
         <WhyUs />
-        <AboutBlock />
+        <AboutBlock compact />
 
         {/* SSS */}
         <Section id="sss">

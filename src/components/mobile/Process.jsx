@@ -38,11 +38,11 @@ export function DesignStages() {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-ugr-50 text-ugr-600">
                 <Icon name={["users", "pen", "layers", "code"][i]} className="h-5 w-5" />
               </span>
-              <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-400">
+              <span className="text-[11px] font-extrabold tracking-[0.18em] text-muted">
                 {s.n}
               </span>
             </div>
-            <h3 className="text-[15.5px] font-extrabold text-navy-800">{s.title}</h3>
+            <h3 className="text-[15px] font-extrabold text-navy-800">{s.title}</h3>
             <p className="mt-2 text-[13px] leading-relaxed text-muted">{s.desc}</p>
           </Reveal>
         ))}
@@ -77,14 +77,14 @@ export function DevTimeline() {
               aria-hidden="true"
               className="mt-3 mb-3 block h-px w-10 rounded-full rule-orange"
             />
-            <h3 className="text-[15.5px] font-extrabold text-navy-800">{s.title}</h3>
+            <h3 className="text-[15px] font-extrabold text-navy-800">{s.title}</h3>
             <p className="mt-2 text-[13px] leading-relaxed text-muted">{s.desc}</p>
           </Reveal>
         ))}
       </ol>
 
       <Reveal className="mt-8 text-center">
-        <p className="text-[12.5px] text-navy-500">
+        <p className="text-[13px] text-muted">
           Süreçteki süre proje kapsamına göre değişir. Tahmini geliştirme takvimi, proje
           analizinden sonra teklifle birlikte paylaşılır.
         </p>

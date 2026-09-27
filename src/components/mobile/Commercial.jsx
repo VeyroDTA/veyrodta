@@ -44,14 +44,14 @@ export function PriceFactors() {
               aria-hidden="true"
               className="mt-3 mb-3 block h-px w-10 rounded-full rule-orange"
             />
-            <h3 className="text-[15.5px] font-extrabold text-navy-800">{f.title}</h3>
+            <h3 className="text-[15px] font-extrabold text-navy-800">{f.title}</h3>
             <p className="mt-2 text-[13px] leading-relaxed text-muted">{f.desc}</p>
           </Reveal>
         ))}
       </ul>
 
       <Reveal className="mt-8 text-center">
-        <p className="mx-auto max-w-2xl text-[13.5px] leading-relaxed text-muted">
+        <p className="mx-auto max-w-2xl text-[14px] leading-relaxed text-muted">
           Bu nedenle mobil uygulama projelerinde hazır bir fiyat yerine projenizin kapsamına
           göre özel teklif hazırlıyoruz.
         </p>
@@ -116,7 +116,7 @@ export function Packages() {
 
             {/* Fiyat yerine teklif — bkz. dosya başındaki "FİYAT KURALI" notu */}
             <div className="mt-6 border-t border-line pt-5">
-              <p className="text-[11px] font-extrabold tracking-wide text-navy-400 uppercase">
+              <p className="text-[11px] font-extrabold tracking-wide text-muted uppercase">
                 Fiyat
               </p>
               <p className="mt-1 text-[17px] font-extrabold text-navy-800">{p.cta}</p>
@@ -132,7 +132,7 @@ export function Packages() {
       </ul>
 
       <Reveal className="mt-8 text-center">
-        <p className="mx-auto max-w-2xl text-[12.5px] leading-relaxed text-navy-500">
+        <p className="mx-auto max-w-2xl text-[13px] leading-relaxed text-muted">
           {packagesNote}
         </p>
       </Reveal>

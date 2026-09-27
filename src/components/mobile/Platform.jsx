@@ -30,7 +30,7 @@ function LabelCard({ item, delay }) {
         {item.label}
       </span>
       <h3 className="mt-4 text-[17px] font-extrabold text-navy-800">{item.title}</h3>
-      <p className="mt-2 text-[13.5px] leading-relaxed text-muted">{item.desc}</p>
+      <p className="mt-2 text-[14px] leading-relaxed text-muted">{item.desc}</p>
     </Reveal>
   );
 }
@@ -107,7 +107,7 @@ export function Integrations() {
             <span className="grid h-8 w-8 flex-none place-items-center rounded-lg bg-ugr-50 text-ugr-600">
               <Icon name={it.icon} className="h-4 w-4" />
             </span>
-            <span className="min-w-0 text-[13.5px] font-bold text-navy-700">{it.label}</span>
+            <span className="min-w-0 text-[14px] font-bold text-navy-700">{it.label}</span>
           </Reveal>
         ))}
       </ul>
@@ -139,7 +139,7 @@ export function AdminPanel() {
             <span className="grid h-8 w-8 flex-none place-items-center rounded-lg bg-ugr-50 text-ugr-600">
               <Icon name={f.icon} className="h-4 w-4" />
             </span>
-            <span className="min-w-0 text-[13.5px] font-bold text-navy-700">{f.label}</span>
+            <span className="min-w-0 text-[14px] font-bold text-navy-700">{f.label}</span>
           </Reveal>
         ))}
       </ul>

@@ -1,4 +1,4 @@
-﻿import {
+import {
   CONTACT_EMAIL,
   RESPONSE_PROMISE,
   phoneHref,
@@ -57,12 +57,12 @@ export default function MailCta({
         <p className="mt-2 text-[14px] leading-relaxed text-muted">{description}</p>
       </div>
 
-      <p className="mb-3 text-[12px] font-extrabold tracking-wide text-navy-500 uppercase">
+      <p className="mb-3 text-[13px] font-extrabold tracking-wide text-muted uppercase">
         E-postanızda şunlar olsun
       </p>
       <ul className="mb-8 space-y-2.5">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-2.5 text-[13.5px] leading-relaxed text-muted">
+          <li key={item} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-muted">
             <span className="mt-0.5 grid h-4 w-4 flex-shrink-0 place-items-center rounded-full bg-ugr-50 text-ugr-600">
               <Icon name="check" className="h-2.5 w-2.5" />
             </span>
@@ -86,14 +86,14 @@ export default function MailCta({
         <Icon name="arrowRight" className="h-4 w-4 flex-shrink-0" />
       </a>
 
-      <p className="mt-3 text-center text-[12px] text-navy-400">
+      <p className="mt-3 text-center text-[13px] text-muted">
         {RESPONSE_PROMISE} · {CONTACT_EMAIL}
       </p>
 
       {/* Alternatif kanallar */}
       <div className="mt-7 flex items-center gap-3">
         <span className="h-px flex-1 bg-line" />
-        <span className="text-[11px] font-bold tracking-wide text-navy-400 uppercase">
+        <span className="text-[11px] font-bold tracking-wide text-muted uppercase">
           ya da
         </span>
         <span className="h-px flex-1 bg-line" />

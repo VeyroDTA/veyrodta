@@ -43,11 +43,11 @@ export function WhyUs() {
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-ugr-50 text-ugr-600">
                 <Icon name={r.icon} className="h-5 w-5" />
               </span>
-              <span className="text-[11px] font-extrabold tracking-[0.18em] text-navy-400">
+              <span className="text-[11px] font-extrabold tracking-[0.18em] text-muted">
                 {r.n}
               </span>
             </div>
-            <h3 className="text-[15.5px] font-extrabold text-navy-800">{r.title}</h3>
+            <h3 className="text-[15px] font-extrabold text-navy-800">{r.title}</h3>
             <p className="mt-2 text-[13px] leading-relaxed text-muted">{r.desc}</p>
           </Reveal>
         ))}
@@ -78,7 +78,7 @@ export function Benefits() {
             <span className="grid h-11 w-11 place-items-center rounded-xl bg-flame-50 text-flame-700">
               <Icon name={b.icon} className="h-5 w-5" />
             </span>
-            <h3 className="mt-4 text-[15.5px] font-extrabold text-navy-800">{b.title}</h3>
+            <h3 className="mt-4 text-[15px] font-extrabold text-navy-800">{b.title}</h3>
             <p className="mt-2 text-[13px] leading-relaxed text-muted">{b.desc}</p>
           </Reveal>
         ))}
@@ -119,7 +119,7 @@ export function Concepts() {
 
               <ul className="mt-4 space-y-1.5 border-t border-line pt-4">
                 {c.points.map((p) => (
-                  <li key={p} className="flex items-start gap-2 text-[12.5px] text-navy-500">
+                  <li key={p} className="flex items-start gap-2 text-[13px] text-muted">
                     <span className="mt-1.5 h-1 w-1 flex-none rounded-full bg-ugr-300" />
                     {p}
                   </li>

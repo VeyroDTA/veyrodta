@@ -104,13 +104,13 @@ export default function QuoteSection() {
                       <Icon name={item.icon} className="h-5 w-5" />
                     </span>
                     <span className="min-w-0">
-                      <span className="block text-[11px] font-extrabold tracking-[0.14em] text-navy-400 uppercase">
+                      <span className="block text-[11px] font-extrabold tracking-[0.14em] text-muted uppercase">
                         {item.label}
                       </span>
-                      <span className="mt-0.5 block truncate text-[14.5px] font-extrabold text-navy-800">
+                      <span className="mt-0.5 block truncate text-[15px] font-extrabold text-navy-800">
                         {item.value}
                       </span>
-                      <span className="mt-0.5 block text-[12px] text-muted">
+                      <span className="mt-0.5 block text-[13px] text-muted">
                         {item.sub}
                       </span>
                     </span>
@@ -121,7 +121,7 @@ export default function QuoteSection() {
 
             <div className="mt-4 rounded-2xl border border-line bg-white p-4">
               <span className="flex items-start gap-2.5 text-[13px] leading-relaxed text-muted">
-                <Icon name="mapPin" className="mt-0.5 h-4 w-4 flex-none text-navy-400" />
+                <Icon name="mapPin" className="mt-0.5 h-4 w-4 flex-none text-muted" />
                 <span>
                   {CONTACT_ADDRESS_LINE1}
                   <br />
@@ -130,8 +130,8 @@ export default function QuoteSection() {
               </span>
             </div>
 
-            <p className="mt-4 flex items-center gap-2 text-[12.5px] font-semibold text-navy-500">
-              <Icon name="clock" className="h-4 w-4 flex-none text-navy-400" />
+            <p className="mt-4 flex items-center gap-2 text-[13px] font-semibold text-muted">
+              <Icon name="clock" className="h-4 w-4 flex-none text-muted" />
               {RESPONSE_PROMISE}
             </p>
           </Reveal>

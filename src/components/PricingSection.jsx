@@ -32,7 +32,7 @@ function PackageCard({ pkg, index }) {
 
       <div className="mb-5">
         <h3 className="text-lg font-extrabold tracking-[0.04em] text-navy-800">{pkg.name}</h3>
-        <p className="mt-2 text-[12.5px] leading-relaxed text-muted">{pkg.audience}</p>
+        <p className="mt-2 text-[13px] leading-relaxed text-muted">{pkg.audience}</p>
       </div>
 
       <div className="mb-5 border-y border-line py-5">
@@ -43,7 +43,7 @@ function PackageCard({ pkg, index }) {
         >
           {pkg.price}
         </span>
-        <span className="mt-2 block text-[11px] font-semibold text-navy-400">
+        <span className="mt-2 block text-[11px] font-semibold text-muted">
           {pkg.priceSuffix}
         </span>
       </div>
@@ -91,8 +91,8 @@ export default function PricingSection({ withSection = true, withHeading = true 
       </div>
 
       <Reveal className="mt-8 flex flex-wrap items-center justify-center gap-2 text-center">
-        <Icon name="document" className="h-4 w-4 flex-shrink-0 text-navy-400" />
-        <p className="text-[12.5px] text-navy-400">{PRICING_NOTE}</p>
+        <Icon name="document" className="h-4 w-4 flex-shrink-0 text-muted" />
+        <p className="text-[13px] text-muted">{PRICING_NOTE}</p>
       </Reveal>
     </>
   );

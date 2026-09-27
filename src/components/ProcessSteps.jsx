@@ -77,7 +77,7 @@ export default function ProcessSteps({ withSection = true, withCta = true }) {
       {body}
 
       <Reveal className="mt-8 text-center">
-        <p className="text-[12.5px] text-navy-400">
+        <p className="text-[13px] text-muted">
           Aşamaların süresi proje kapsamına göre değişir. Toplam teslim süresi paket seçimine
           göre <strong className="font-extrabold text-navy-600">2-6 hafta</strong> aralığındadır.
         </p>
