@@ -129,21 +129,70 @@ statik siteler için ticari kullanıma açık).
 
 - Build komutu: `npm run build`
 - Çıktı klasörü: `dist`
+- Deploy **Cloudflare dashboard'daki Git bağlantısı** ile olur
+  (Workers & Pages → `ugrstudio` → Settings → Builds & deployments →
+  Build command `npm run build`, Branch `main`). `main`'e push otomatik
+  deploy tetikler. Depoya ait GitHub Actions dosyası yok ve gerekmiyor.
 - `wrangler.jsonc` dosyası, React Router'ın client-side sayfalarının (`/fiyatlar`,
   `/blog/:slug` gibi) doğrudan URL ile açılınca ya da sayfa yenilenince 404 vermemesi
   için gerekli (`not_found_handling: single-page-application`) — silme.
-- `wrangler.jsonc` içindeki `name` alanı mevcut Worker adıdır; değiştirme.
-- `main` branch'ine her `git push` otomatik olarak yeni bir deploy tetikler.
+- `wrangler.jsonc` içindeki `name` alanı Worker'ın **kendisinin** adıdır;
+  ziyaretçinin gördüğü adres değildir. Değeri `ugrstudio` olmalı, çünkü bu
+  hesapta gerçekten bulunan Worker budur. Bu dosyayı dashboard'daki Git
+  bağlantısı okumaz (oradaki proje adı belirleyicidir); `name` alanı yalnızca
+  bu makineden `wrangler deploy` çalıştırıldığında işe yarar ve yanlışsa
+  içeriği yanlış yere yükler. Bu yüzden `veyrodta` → `ugrstudio` düzeltildi.
 
-## Yayına almadan / domain bağlarken kontrol listesi
+## Şu anki durum (2026-09-27)
 
-- [ ] `src/config.js` içindeki `SITE_URL`'i gerçek domain ile güncelle
-      (sitemap bu değerden okunur; `index.html` içindeki alan adı geçen etiketleri
-      — `canonical`, `og:url`, `og:image`, JSON-LD `url` — elle eşle)
-- [ ] `public/robots.txt` içindeki sitemap satırını güncelle
+- Site **yayında**: `https://ugrstudio.yapayzekagmail.workers.dev`
+- **Kendi domaini bağlı değil.** `ugrstudio.com.tr` DNS'te kayıtsız
+  (NXDOMAIN — NS kaydı bile yok). Bu yüzden `src/config.js` içindeki
+  `SITE_URL = "https://www.ugrstudio.com.tr"` henüz çalışan bir adres değil.
+- Canlıdaki etkisi: sayfa düzgün açılır ve render olur, ama `canonical`,
+  `og:url`, `og:image`, JSON-LD `url`, `sitemap.xml` ve `robots.txt` ölü bir
+  adrese işaret eder. **Sonuç:** WhatsApp/LinkedIn/X link paylaşımlarında
+  kapak görseli çıkmaz ve arama motorları `ugrstudio.com.tr`'yi canonical
+  sayar.
+- İsteğe bağlı acil çözüm: `SITE_URL`'ı workers.dev adresine çevirip
+  `npm run sitemap` çalıştırmak. Ama kalıcı çözüm domaini bağlamaktır;
+  o zaman aşağıdaki kontrol listesi tek push'ta devreye girer.
+
+## Domain bağlama kontrol listesi
+
+`ugrstudio.com.tr` şu an kayıtsız. Bağlamak için iki ayrı iş var ve **sırası
+önemli** — Worker'a route atamak için domainin önce Cloudflare'a gelmesi gerekir.
+
+**1) Domaini Cloudflare'a ekle**
+
+- [ ] `ugrstudio.com.tr`i Cloudflare'da bir zone olarak ekle
+      (Nameserver'lar registrar'da değiştirilir; değişiklik 1–24 saat sürebilir)
+- [ ] Nameserver değişikliği yayılana kadar bekle, sonra
+      `Resolve-DnsName ugrstudio.com.tr` ile A/NS kaydının geldiğini doğrula
+
+**2) Worker'a bağla**
+
+- [ ] Workers & Pages → `ugrstudio` → Settings → Domains & Routes →
+      `ugrstudio.com.tr` ve `www.ugrstudio.com.tr` ekle
+- [ ] Tercih edilen adresi seç (örn. `www`), diğerini kalıcı yönlendirmeye çevir
+- [ ] `https://ugrstudio.com.tr/` ve `https://www.ugrstudio.com.tr/` adreslerinin
+      ikisinin de 200 döndürdüğünü ve yalnızca birinin 301 ile yönlendiğini doğrula
+
+**3) Kodu yeni adrese göre güncelle** (SITE_URL okuma noktasıdır)
+
+- [ ] `src/config.js` → `SITE_URL` değerini gerçek domain ile güncelle
+- [ ] `index.html` içindeki alan adı geçen etiketleri elle eşle:
+      `canonical` (satır ~18), `og:url`, `og:image`, `twitter:image`,
+      JSON-LD `url` (satır ~58)
+- [ ] `public/robots.txt` içindeki `Sitemap:` satırını güncelle
 - [ ] `npm run sitemap` ile `public/sitemap.xml`'i yeniden üret
-- [ ] `index.html` içindeki `priceRange` değerini `src/data/pricing.js` ile eşle
 - [ ] GA4'te (analytics.google.com) veri akışının URL'sini güncelle
+- [ ] Domain bağlandıktan sonra `https://domain/sitemap.xml` adresinin
+      gerçekten açıldığını ve içindeki adreslerin yeni alan adını taşıdığını doğrula
+
+**Kontrol (domain'den bağımsız, şimdi yapılabilir)**
+
+- [ ] `index.html` içindeki `priceRange` değerini `src/data/pricing.js` ile eşle
 - [ ] `iletisim@ugrstudio.com.tr` adresine bir deneme e-postası gönder (e-posta
       istemcisi bağlantısı her cihazda çalışıyor mu, konu/gövde doğru mu diye bak)
 

@@ -1,10 +1,19 @@
 {
-  // "name" bilerek "veyrodta" olarak bırakıldı (marka artık UGR Studio olsa da).
-  // Bunu değiştirmek Cloudflare'de YENİ bir worker/URL oluşturur, mevcut canlı
-  // adresi (veyrodta.yapayzekagmail.workers.dev) kırar. Kendi domainini
-  // bağladığında zaten görünen adres sadece o domain olacağı için bu iç isim
-  // hiçbir yerde görünmüyor — dokunmadan bırakman en güvenlisi.
-  "name": "veyrodta",
+  // "name" DEĞİŞTİRİLDİ: "veyrodta" -> "ugrstudio"
+  //
+  // Önceki değer yanlıştı. Hesapta gerçekte bulunan worker "ugrstudio" idi;
+  // "veyrodta" adlı bir worker HİÇ OLUŞMAMIŞTI. Bu yüzden:
+  //   · veyrodta.yapayzekagmail.workers.dev  -> 404
+  //   · ugrstudio.yapayzekagmail.workers.dev -> 200 (canlı adres)
+  // Yanlış isimle çalıştırılan her "wrangler deploy" boş bir "veyrodta"
+  // worker'ı yaratıp içeriği gerçek siteye değil oraya yüklendi.
+  //
+  // DİKKAT: "name" alanı worker'ın KENDİSİNİ belirler; ziyaretçinin gördüğü
+  // adresi değil. Adresi değiştirmek için aşağıdaki "routes" kullanılır
+  // (domain bağlandığında). GitHub → Cloudflare bağlantısı bu dosyayı okumaz;
+  // dashboard'daki Workers & Pages > Settings > Builds & deployments üzerinden
+  // yapılandırılmıştır ve push'ta otomatik deploy eder.
+  "name": "ugrstudio",
   "compatibility_date": "2026-09-20",
   "assets": {
     "directory": "./dist",
