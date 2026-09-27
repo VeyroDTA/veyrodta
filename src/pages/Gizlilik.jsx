@@ -3,8 +3,7 @@ import {
   CONTACT_ADDRESS_LINE1,
   CONTACT_ADDRESS_LINE2,
   CONTACT_EMAIL,
-  LEGAL_CONTROLLER_NAME,
-  LEGAL_CONTROLLER_TAX,
+  legalControllerWithTax,
   SITE_URL,
 } from "../config";
 
@@ -72,7 +71,7 @@ export default function Gizlilik() {
 
       <LegalSection heading="5. Bilgi Güvenliği">
         <p>
-          {LEGAL_CONTROLLER_NAME} ({LEGAL_CONTROLLER_TAX}) tarafından, verilerinizin
+          {legalControllerWithTax()} tarafından, verilerinizin
           korunması için teknik ve idari tedbirler alınmaktadır. Veri aktarımı SSL/TLS ile
           şifrelenir, erişimi yalnızca yetkili kişilerle sınırlıdır. Kişisel verilerin
           güvenliğini etkileyen bir olayın tespit edilmesi hâlinde yasal bildirim yükümlülüğü

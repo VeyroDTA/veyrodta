@@ -3,8 +3,7 @@ import {
   CONTACT_ADDRESS_LINE1,
   CONTACT_ADDRESS_LINE2,
   CONTACT_EMAIL,
-  LEGAL_CONTROLLER_NAME,
-  LEGAL_CONTROLLER_TAX,
+  legalControllerWithTax,
   SITE_URL,
 } from "../config";
 
@@ -92,7 +91,7 @@ export default function Cerez() {
         </p>
         <p>
           <strong className="font-bold text-navy-700">Veri sorumlusu:</strong>{" "}
-          {LEGAL_CONTROLLER_NAME} ({LEGAL_CONTROLLER_TAX}) — {CONTACT_ADDRESS_LINE1},{" "}
+          {legalControllerWithTax()} — {CONTACT_ADDRESS_LINE1},{" "}
           {CONTACT_ADDRESS_LINE2}
         </p>
         <p>

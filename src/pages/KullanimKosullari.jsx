@@ -3,8 +3,8 @@ import {
   CONTACT_ADDRESS_LINE1,
   CONTACT_ADDRESS_LINE2,
   CONTACT_EMAIL,
-  LEGAL_CONTROLLER_NAME,
-  LEGAL_CONTROLLER_TAX,
+  legalControllerName,
+  legalControllerWithTax,
   SITE_URL,
 } from "../config";
 
@@ -41,7 +41,7 @@ export default function KullanimKosullari() {
       <LegalSection heading="3. Fikri Mülkiyet Hakları">
         <p>
           Sitedeki tüm içerikler — metinler, görseller, tasarım öğeleri, arayüz tasarımı, kod
-          ve marka kullanımı — {LEGAL_CONTROLLER_NAME} adlı veri sorumlusuna aittir. İçerikler
+          ve marka kullanımı — {legalControllerName()} adlı veri sorumlusuna aittir. İçerikler
           yalnızca bilgilendirme amaçlıdır; izinsiz kopyalanması, yeniden yayımlanması veya
           ticari kullanılması hukuki sonuç doğurur.
         </p>
@@ -100,7 +100,7 @@ export default function KullanimKosullari() {
         </p>
         <p>
           <strong className="font-bold text-navy-700">Veri sorumlusu:</strong>{" "}
-          {LEGAL_CONTROLLER_NAME} ({LEGAL_CONTROLLER_TAX})
+          {legalControllerWithTax()}
         </p>
       </LegalSection>
     </LegalPage>

@@ -29,9 +29,30 @@ export const RESPONSE_PROMISE = "İş saatleri içinde en geç aynı gün dönü
 // kendi adını soyadını ve vergi dairen / vergi numaranı yazmalısın.
 // Yayına almadan önce KVKK ve Gizlilik metinlerini bir hukuk uzmanına
 // kontrol ettir — bu metinler hukuki danışmanlık yerine geçmez.
+//
+// Boş bırakırsan site yayında köşeli parantezli bir placeholder BASMAZ:
+// ad yerine marka adını ("UGR Studio") kullanır, vergi bilgisini de
+// cümleden tamamen çıkarır. Eksik bilgi, bozuk görünen metin yerine
+// düzgün bir cümle olarak okunur.
 // ─────────────────────────────────────────────
-export const LEGAL_CONTROLLER_NAME = "[Ad Soyad]"; // TODO: gerçek adını soyadını yaz
-export const LEGAL_CONTROLLER_TAX = "[Vergi Dairesi / VKN]"; // TODO: vergi dairesi ve numarası
+export const LEGAL_CONTROLLER_NAME = ""; // ör. "Ahmet Yılmaz"
+export const LEGAL_CONTROLLER_TAX = ""; // ör. "Silivri V.D. — 1234567890"
+
+// Yayında görünecek veri sorumlusu adı. Boşsa marka adı kullanılır.
+export const legalControllerName = () => LEGAL_CONTROLLER_NAME.trim() || "UGR Studio";
+
+// Cümle içinde kullanılacak tam biçim: "Ahmet Yılmaz (Silivri V.D. — 123...)".
+// Vergi bilgisi girilmemişse parantez tamamen atlanır; "UGR Studio ()"
+// gibi bozuk bir metin asla oluşmaz.
+export const legalControllerWithTax = () => {
+  const name = legalControllerName();
+  const tax = LEGAL_CONTROLLER_TAX.trim();
+  return tax ? `${name} (${tax})` : name;
+};
+
+// Vergi bilgisi ayrı bir satır olarak gerekiyorsa kullanılır; girilmemişse
+// null döner, böylece sayfa o <p>'yi hiç render etmez.
+export const legalTaxLine = () => LEGAL_CONTROLLER_TAX.trim() || null;
 
 // ─────────────────────────────────────────────
 // NAVİGASYON — Üst menü

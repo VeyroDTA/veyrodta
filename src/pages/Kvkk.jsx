@@ -3,10 +3,15 @@ import {
   CONTACT_ADDRESS_LINE1,
   CONTACT_ADDRESS_LINE2,
   CONTACT_EMAIL,
-  LEGAL_CONTROLLER_NAME,
-  LEGAL_CONTROLLER_TAX,
+  legalControllerName,
+  legalTaxLine,
   SITE_URL,
 } from "../config";
+
+const tax = legalTaxLine();
+// Gerçek ad girilmişse "Ad Soyad ("UGR Studio") olarak" yazılır.
+// Ad boşsa ad zaten marka adı olduğu için tırnak içi takma ad tekrarlanmasın.
+const controllerSentence = legalControllerName();
 
 export default function Kvkk() {
   return (
@@ -19,17 +24,18 @@ export default function Kvkk() {
     >
       <LegalSection heading="1. Veri Sorumlusu">
         <p>
-          {LEGAL_CONTROLLER_NAME} (&quot;UGR Studio&quot;) olarak, 6698 sayılı KVKK kapsamında
+          {controllerSentence} olarak, 6698 sayılı KVKK kapsamında
           veri sorumlusu sıfatıyla aşağıda açıklanan kişisel verileri işlemekteyiz.
         </p>
         <p>
           <strong className="font-bold text-navy-700">Adres:</strong> {CONTACT_ADDRESS_LINE1},{" "}
           {CONTACT_ADDRESS_LINE2}
         </p>
-        <p>
-          <strong className="font-bold text-navy-700">Vergi Dairesi / No:</strong>{" "}
-          {LEGAL_CONTROLLER_TAX}
-        </p>
+        {tax && (
+          <p>
+            <strong className="font-bold text-navy-700">Vergi Dairesi / No:</strong> {tax}
+          </p>
+        )}
         <p>
           <strong className="font-bold text-navy-700">E-posta:</strong>{" "}
           <a href={`mailto:${CONTACT_EMAIL}`} className="font-bold text-ugr-600 underline underline-offset-2">
