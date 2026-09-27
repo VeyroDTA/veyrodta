@@ -1,4 +1,5 @@
 ﻿import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { solutions } from "../data/solutions";
 import { quoteMailtoHref } from "../config";
 import { trackEvent } from "../analytics";
@@ -193,6 +194,21 @@ export default function SolutionPicker() {
                   Paketleri incele
                 </Button>
               </div>
+
+              {/* Detay sayfası olan kategoriler için: ana sayfadan mobil
+                  uygulama sayfasına ikinci ve en görünür yol. */}
+              {active.to && (
+                <p className="mt-5 border-t border-line pt-5 text-[13.5px] text-muted">
+                  Bu hizmetin kapsamını, sürecini ve örnek çalışmalarını{" "}
+                  <Link
+                    to={active.to}
+                    className="inline-flex items-center gap-1.5 font-extrabold text-ugr-600 underline-offset-4 hover:underline"
+                  >
+                    detay sayfasında inceleyin
+                    <Icon name="arrowRight" className="h-3.5 w-3.5" />
+                  </Link>
+                </p>
+              )}
             </div>
           </div>
         </div>

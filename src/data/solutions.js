@@ -45,8 +45,29 @@ export const solutions = [
     icon: "cart",
   },
   {
-    id: "ozel",
+    id: "mobil",
     order: "03",
+    title: "Mobil Uygulama",
+    // Telefon mockup'ındaki sahte arama satırı
+    searchQuery: "mobil uygulama geliştirme",
+    desc: "İşletmenizi müşterilerinizin cebine taşıyan, Android ve iOS için özel mobil uygulamalar.",
+    examples: [
+      "Marka kimliğinize özel arayüz ve kullanıcı deneyimi",
+      "Sipariş, randevu, rezervasyon veya üyelik akışları",
+      "Ödeme ve üçüncü taraf servis entegrasyonları",
+      "Uygulamanın arkasında web tabanlı yönetim paneli",
+    ],
+    scope: "Özellik kapsamına göre değişir",
+    duration: "Analiz sonrası belirlenir",
+    priceFrom: "Kapsama göre teklif",
+    formType: "Mobil Uygulama Geliştirme",
+    icon: "mobile",
+    // Bu kategorinin kendi detay sayfası var; panelde bağlantı gösterilir.
+    to: "/mobil-uygulama-gelistirme",
+  },
+  {
+    id: "ozel",
+    order: "04",
     title: "Özel Web ÇöZümleri",
     searchQuery: "özel web uygulaması geliştirme",
     desc: "Standart paketlerin dışında kalan özel ihtiyaçlarınız için size özel web uygulamaları.",
