@@ -1,18 +1,25 @@
 import { Link } from "react-router-dom";
 import Seo from "./Seo";
 import Reveal from "./Reveal";
-import Icon from "./Icon";
 
 // ─────────────────────────────────────────────
 // YASAL SAYFA ŞABLONU
 //
-// ⚠ UYARI: Bu metinler bir TASLAKTIR ve hukuki danışmanlık yerine geçmez.
-// Yayına almadan önce KVKK, Gizlilik Politikası, Çerez Politikası ve Kullanım
-// Koşulları'nı bir hukuk uzmanına kontrol ettir. Özellikle:
-//   · Veri sorumlusunun kimliği (şahıs firmasıysa ad soyad + vergi bilgisi)
+// Bu blok site üzerinde GÖRÜNMEZ, sadece kodu okuyanlar içindir.
+//
+// Sayfalarda bir zamanlar turuncu bir "bu metin bir taslaktır" kutusu
+// vardı; 28 Eylül 2026'da kaldırıldı (karar: kullanıcı). Geri getirme.
+//
+// Metinler UGR Studio tarafından hazırlandı, bağımsız bir hukuk uzmanı
+// tarafından incelenmedi. İçerik bu durumda değişmedi — yalnızca taslak
+// uyarısı kaldırıldı. İçerikle ilgili şunlar hâlâ açık:
+//
+//   · Veri sorumlusunun kimliği (LEGAL_CONTROLLER_NAME / _TAX boşsa
+//     sayfa marka adını gösterir; tüzel kişilik + vergi dairesi/VKN şart)
 //   · Yurt dışına veri aktarımı ve uygun güvenlik tedbirleri (KVKK 11. madde)
 //   · Aydınlatma metninin eksiksizliği
-// yazılı şekilde doğrulanmalıdır.
+//
+// Bu maddeleri bir hukuk uzmanına yazılı olarak doğrulat.
 // ─────────────────────────────────────────────
 
 export const LEGAL_UPDATED_AT = "27 Eylül 2026";
@@ -53,21 +60,7 @@ export default function LegalPage({
         <div className="mx-auto w-full max-w-4xl px-5 py-12 sm:px-6 sm:py-16">
           <div className="space-y-9 text-[14px] leading-relaxed text-muted">{children}</div>
 
-          <Reveal className="mt-12 rounded-2xl border border-flame-200 bg-flame-50 p-5">
-            <div className="flex items-start gap-3">
-              <span className="grid h-8 w-8 flex-shrink-0 place-items-center rounded-lg bg-white text-flame-600">
-                <Icon name="document" className="h-4 w-4" />
-              </span>
-              <div className="text-[13px] leading-relaxed text-navy-600">
-                <strong className="font-extrabold">Bu metin bir taslaktır.</strong> UGR Studio
-                tarafından hazırlanmış olsa da hukuki danışmanlık yerine geçmez. Ticari
-                kullanım öncesinde bir hukuk uzmanı tarafından kontrol edilmesi gerekir. Bu
-                metinde değişiklik yapılırsa güncelleme tarihi yukarıda belirtilir.
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal className="mt-8 flex flex-wrap gap-2 border-t border-line pt-8">
+          <Reveal className="mt-12 flex flex-wrap gap-2 border-t border-line pt-8">
             <Link
               to="/kvkk"
               className="rounded-xl border border-line bg-white px-4 py-2.5 text-[13px] font-bold text-navy-700 transition-colors hover:border-ugr-200 hover:text-ugr-600"
